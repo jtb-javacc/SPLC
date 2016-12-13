@@ -12,7 +12,7 @@ repositories {
 	}
 
 	maven {
-		url "https://oss.sonatype.org/content/repositories/netjavadevjavacc-1000/"
+		url "https://oss.sonatype.org/content/repositories/netjavadevjavacc-1002/"
 	}
 
 	mavenCentral()
