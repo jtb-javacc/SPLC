@@ -1,5 +1,7 @@
 build/
 bin/
+gen/
+.gradle/
 
 # Compiled Object files
 *.slo
