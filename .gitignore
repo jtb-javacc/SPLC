@@ -2,6 +2,10 @@ build/
 bin/
 gen/
 .gradle/
+Debug/
+
+.vs/
+*.db
 
 # Compiled Object files
 *.slo
