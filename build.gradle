@@ -29,7 +29,7 @@ compileJjtree {
     include 'ast/*.cc'
     include 'ast/*.h'
     include '*.h'
-    inputDirectory  = projectDir
+    inputDirectory  = new File(projectDir, 'jjt')
     outputDirectory = new File(projectDir, 'gen')
 //    arguments = [grammar_encoding: 'UTF-8', static: 'false']
 }
