@@ -25,43 +25,31 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
  * THE POSSIBILITY OF SUCH DAMAGE.
  */
-#pragma once
 
-/**
- *  All AST nodes must implement this interface.
- *  It provides basic machinery for constructing the parent and
- *  child relationships between nodes.
- */
-class Node {
+/* JJT: 0.2.2 */
 
-  /** This method is called after the node has been made the current
-    node.  It indicates that child nodes can now be added to it. */
-public:
-	void jjtOpen();
 
-  /** This method is called after all the child nodes have been
-    added. */
-  void jjtClose();
 
-  /** This pair of methods are used to inform the node of its
-    parent. */
-  void jjtSetParent(Node* n);
-  /** Get this node's parent. */
-  Node jjtGetParent();
 
-  /** This method tells the node to add its argument to the node's
-    list of children.  */
-  void jjtAddChild(Node* n, int i);
+public class ASTVarDeclaration extends SimpleNode
+                               implements SPLParserConstants {
 
-  /** This method returns a child node.  The children are numbered
-     from zero, left to right. */
-  Node* jjtGetChild(int i);
+  int type;
+  String name;
 
-  /** Return the number of children the node has. */
-  int jjtGetNumChildren();
+  public ASTVarDeclaration(int id) {
+    super(id);
+  }
 
-  /************************* Added by Sreeni. *******************/
+  public ASTVarDeclaration(SPLParser p, int id) {
+    super(p, id);
+  }
 
-  /** Interpret method */
-  void interpret();
-};
+  public void interpret()
+  {
+     if (type == BOOL)
+        symtab.put(name, new Boolean(false));
+     else
+        symtab.put(name, new Integer(0));
+  }
+}

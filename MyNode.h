@@ -26,44 +26,48 @@
  * THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#pragma once
 
+#include <string>
+#include <map>
+#include <stack>
+#include <stdexcept>
+using std::string;
+using std::map;
+using std::stack;
+using std::runtime_error;
 /**
  * Specialised node.
  */
-class MyNode
-{
-  /** Symbol table */
+class Node;
+class MyNode {
+	/** Symbol table */
 protected:
-	static java.util.Hashtable symtab = new java.util.Hashtable();
+	static map<string, Node*> symtab;
 
-  /** Stack for calculations. */
-  static Object[] stack = new Object[1024];
-  static int top = -1;
+	/** Stack for calculations. */
+	static stack<Node*> stack;
+	static int top /*= -1*/;
 
-  /** @throws UnsupportedOperationException if called */
+	/** @throws UnsupportedOperationException if called */
 public:
-  void interpret()
-  {
-     throw new UnsupportedOperationException(); // It better not come here.
-  }
+	virtual void interpret() {
+		throw runtime_error("unsupporte operation"); // It better not come here.
+	}
 
-protected:
-  static Writer out = new PrintWriter(System.out);
-  static Reader in = new InputStreamReader(System.in);
+/*
+ *
+ protected:
+	static Writer out = new PrintWriter(System.out);
+	static Reader in = new InputStreamReader(System.in);
 
-  /**
-   * @param in the input to set
-   */
 public:
-  static void setIn(Reader in) {
-    MyNode.in = in;
-  }
+	static void setIn(Reader in) {
+		MyNode.in = in;
+	}
 
-  /**
-   * @param out the output to set
-   */
-  static void setOut(Writer out) {
-    MyNode.out = out;
-  }
-
+	static void setOut(Writer out) {
+		MyNode.out = out;
+	}
+	*/
 };

@@ -25,43 +25,44 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
  * THE POSSIBILITY OF SUCH DAMAGE.
  */
-#pragma once
 
-/**
- *  All AST nodes must implement this interface.
- *  It provides basic machinery for constructing the parent and
- *  child relationships between nodes.
- */
-class Node {
+/* JJT: 0.2.2 */
 
-  /** This method is called after the node has been made the current
-    node.  It indicates that child nodes can now be added to it. */
-public:
-	void jjtOpen();
+import java.io.IOException;
 
-  /** This method is called after all the child nodes have been
-    added. */
-  void jjtClose();
+public class ASTReadStatement extends SimpleNode {
+  String name;
 
-  /** This pair of methods are used to inform the node of its
-    parent. */
-  void jjtSetParent(Node* n);
-  /** Get this node's parent. */
-  Node jjtGetParent();
+  public ASTReadStatement(int id) {
+    super(id);
+  }
 
-  /** This method tells the node to add its argument to the node's
-    list of children.  */
-  void jjtAddChild(Node* n, int i);
+  public ASTReadStatement(SPLParser p, int id) {
+    super(p, id);
+  }
 
-  /** This method returns a child node.  The children are numbered
-     from zero, left to right. */
-  Node* jjtGetChild(int i);
+  public void interpret() {
+    Object o;
+    char[] b = new char[64];
 
-  /** Return the number of children the node has. */
-  int jjtGetNumChildren();
+    if ((o = symtab.get(name)) == null)
+      System.err.println("Undefined variable : " + name);
 
-  /************************* Added by Sreeni. *******************/
-
-  /** Interpret method */
-  void interpret();
-};
+    try {
+      if (o instanceof Boolean) {
+        out.write("Enter a value for \'" + name + "\' (boolean) : ");
+        out.flush();
+        in.read(b);
+        symtab.put(name, new Boolean((new String(b)).trim()));
+      } else if (o instanceof Integer) {
+        out.write("Enter a value for \'" + name + "\' (int) : ");
+        out.flush();
+        in.read(b);
+        symtab.put(name, new Integer((new String(b)).trim()));
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+      System.exit(1);
+    }
+  }
+}

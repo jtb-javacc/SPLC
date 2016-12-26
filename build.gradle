@@ -17,15 +17,17 @@ apply plugin: 'cpp'
 version='7.0.0'
 
 repositories {
+	mavenLocal()
 	mavenCentral()
 	
     dependencies {
-		javacc 'net.java.dev.javacc:javacc:7.0.0'
+		javacc 'net.java.dev.javacc:javacc:7.0.1'
     }
 }
 compileJjtree {
 	language 'Cpp'
-    include '*.cc'
+    include 'ast/*.cc'
+    include 'ast/*.h'
     include '*.h'
     inputDirectory  = projectDir
     outputDirectory = new File(projectDir, 'gen')

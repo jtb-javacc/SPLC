@@ -183,7 +183,7 @@
     <ClCompile Include="..\gen\SPLParserTokenManager.cc" />
     <ClCompile Include="..\gen\Token.cc" />
     <ClCompile Include="..\gen\TokenMgrError.cc" />
-    <ClCompile Include="..\src\main\cpp\SPLC.cpp" />
+    <ClCompile Include="..\SPLC.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\gen\ASTAddNode.h" />

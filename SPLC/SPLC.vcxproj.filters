@@ -132,7 +132,7 @@
     <ClCompile Include="..\gen\TokenMgrError.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\main\cpp\SPLC.cpp">
+    <ClCompile Include="..\SPLC.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,4 +1,4 @@
-/* Copyright (c) 2006, Sreenivasa Viswanadha <sreeni@viswanadha.net>
+/* Copyright (c) 2006, Sun Microsystems, Inc.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -26,46 +26,34 @@
  * THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#pragma once
+/* JJT: 0.2.2 */
 
-#include <string>
-#include <map>
-#include <stack>
-using std::string;
-using std::map;
-using std::stack;
-/**
- * Specialised node.
- */
-class Node;
-class MyNode {
-	/** Symbol table */
-protected:
-	static map<string, Node*> symtab;
 
-	/** Stack for calculations. */
-	static stack<Node*> stack;
-	static int top = -1;
+import java.io.IOException;
 
-	/** @throws UnsupportedOperationException if called */
-public:
-	virtual void interpret() {
-		throw new UnsupportedOperationException(); // It better not come here.
-	}
+public class ASTWriteStatement extends SimpleNode {
+  String name;
 
-/*
- *
- protected:
-	static Writer out = new PrintWriter(System.out);
-	static Reader in = new InputStreamReader(System.in);
+  public ASTWriteStatement(int id) {
+    super(id);
+  }
 
-public:
-	static void setIn(Reader in) {
-		MyNode.in = in;
-	}
+  public ASTWriteStatement(SPLParser p, int id) {
+    super(p, id);
+  }
 
-	static void setOut(Writer out) {
-		MyNode.out = out;
-	}
-	*/
-};
+  public void interpret()
+  {
+     if (symtab.get(name) == null)
+        System.err.println("Undefined variable : " + name);
+    else
+      try {
+        out.write("Value of " + name + " : " + symtab.get(name));
+        out.flush();
+      } catch (IOException e) {
+        e.printStackTrace();
+        System.exit(1);
+      }
+  }
+
+}

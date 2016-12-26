@@ -25,43 +25,30 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
  * THE POSSIBILITY OF SUCH DAMAGE.
  */
-#pragma once
 
-/**
- *  All AST nodes must implement this interface.
- *  It provides basic machinery for constructing the parent and
- *  child relationships between nodes.
- */
-class Node {
 
-  /** This method is called after the node has been made the current
-    node.  It indicates that child nodes can now be added to it. */
-public:
-	void jjtOpen();
+/* JJT: 0.2.2 */
 
-  /** This method is called after all the child nodes have been
-    added. */
-  void jjtClose();
+public class ASTNENode extends SimpleNode {
+  public ASTNENode(int id) {
+    super(id);
+  }
 
-  /** This pair of methods are used to inform the node of its
-    parent. */
-  void jjtSetParent(Node* n);
-  /** Get this node's parent. */
-  Node jjtGetParent();
+  public ASTNENode(SPLParser p, int id) {
+    super(p, id);
+  }
 
-  /** This method tells the node to add its argument to the node's
-    list of children.  */
-  void jjtAddChild(Node* n, int i);
+  public void interpret()
+  {
+     jjtGetChild(0).interpret();
+     jjtGetChild(1).interpret();
 
-  /** This method returns a child node.  The children are numbered
-     from zero, left to right. */
-  Node* jjtGetChild(int i);
+     if (stack[top] instanceof Boolean)
+        stack[--top] = new Boolean(((Boolean)stack[top]).booleanValue() !=
+                                ((Boolean)stack[top + 1]).booleanValue());
+     else
+        stack[--top] = new Boolean(((Integer)stack[top]).intValue() !=
+                                ((Integer)stack[top + 1]).intValue());
+  }
 
-  /** Return the number of children the node has. */
-  int jjtGetNumChildren();
-
-  /************************* Added by Sreeni. *******************/
-
-  /** Interpret method */
-  void interpret();
-};
+}
