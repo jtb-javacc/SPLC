@@ -12,10 +12,10 @@
   void ASTWhileStatement::interpret()
   {
      do {
-       jjtGetChild(0).interpret();
+       jjtGetChild(0)->interpret();
 
        if (((Boolean)stack[top--]).booleanValue())
-          jjtGetChild(1).interpret();
+          jjtGetChild(1)->interpret();
        else
           break;
     } while (true);

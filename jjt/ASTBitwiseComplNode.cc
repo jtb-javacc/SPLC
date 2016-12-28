@@ -13,7 +13,7 @@
 
   void ASTBitwiseComplNode::interpret()
   {
-     jjtGetChild(0).interpret();
+     jjtGetChild(0)->interpret();
 
      stack[top] = new Integer(~((Integer)stack[top]).intValue());
   }

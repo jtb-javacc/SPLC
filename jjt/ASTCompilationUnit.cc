@@ -27,7 +27,7 @@
 	}
 	System.out.println();
 
-        jjtGetChild(i).interpret();
+        jjtGetChild(i)->interpret();
      }
 
   }

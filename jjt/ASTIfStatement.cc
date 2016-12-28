@@ -13,11 +13,11 @@
 
   void ASTIfStatement::interpret()
   {
-     jjtGetChild(0).interpret();
+     jjtGetChild(0)->interpret();
 
      if (((Boolean)stack[top--]).booleanValue())
-        jjtGetChild(1).interpret();
+        jjtGetChild(1)->interpret();
      else if (jjtGetNumChildren() == 3)
-        jjtGetChild(2).interpret();
+        jjtGetChild(2)->interpret();
   }
 

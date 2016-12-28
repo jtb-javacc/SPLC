@@ -15,7 +15,7 @@
      int i, k = jjtGetNumChildren();
 
      for (i = 0; i < k; i++)
-        jjtGetChild(i).interpret();
+        jjtGetChild(i)->interpret();
 
   }
 

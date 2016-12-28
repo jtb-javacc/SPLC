@@ -11,6 +11,7 @@
   }
 
   void ASTReadStatement::interpret() {
+#ifdef FIXME
     Object o;
     char[] b = new char[64];
 
@@ -32,6 +33,7 @@
     } catch (IOException e) {
       e.printStackTrace();
       System.exit(1);
+#endif
     }
   }
 

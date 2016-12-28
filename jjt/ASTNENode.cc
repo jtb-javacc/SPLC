@@ -11,8 +11,8 @@
   }
   void ASTNENode::interpret()
   {
-     jjtGetChild(0).interpret();
-     jjtGetChild(1).interpret();
+     jjtGetChild(0)->interpret();
+     jjtGetChild(1)->interpret();
 
      if (stack[top] instanceof Boolean)
         stack[--top] = new Boolean(((Boolean)stack[top]).booleanValue() !=

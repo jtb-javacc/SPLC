@@ -12,7 +12,10 @@
 class Boolean ; public Node {
 public:
 	Boolean();
+	Boolean(bool value);
 	virtual ~Boolean();
+private:
+	bool boolean;
 };
 
 

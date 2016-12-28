@@ -31,9 +31,11 @@
 #include <string>
 #include <map>
 #include <stack>
+#include <memory>
 using std::string;
 using std::map;
 using std::stack;
+using std::unique_ptr;
 /**
  * Specialised node.
  */

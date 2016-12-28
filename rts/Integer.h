@@ -12,7 +12,13 @@
 class Integer : public Node {
 public:
 	Integer();
+	Integer(int value);
 	virtual ~Integer();
+
+	Integer* operator+(const Integer& value);
+
+private:
+	int integer;
 };
 
 

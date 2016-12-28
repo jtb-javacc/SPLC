@@ -14,7 +14,7 @@
   {
      String name;
 
-     jjtGetChild(1).interpret();
+     jjtGetChild(1)->interpret();
      symtab.put(name = ((ASTId)jjtGetChild(0)).name, stack[top]);
   }
 

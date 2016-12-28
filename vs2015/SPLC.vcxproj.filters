@@ -139,6 +139,18 @@
     <ClCompile Include="..\jjt\MyNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\rts\Boolean.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\rts\Integer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\rts\Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\rts\Variable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\jjt\ASTAddNode.h">
@@ -281,6 +293,18 @@
     </ClInclude>
     <ClInclude Include="..\jjt\MyNode.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\rts\Variable.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\rts\Boolean.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\rts\Integer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\rts\Object.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

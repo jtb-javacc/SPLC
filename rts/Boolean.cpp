@@ -9,6 +9,8 @@
 
 Boolean::Boolean() {
 }
+Boolean::Boolean(bool value) : boolean(value){
+}
 
 Boolean::~Boolean() {
 }

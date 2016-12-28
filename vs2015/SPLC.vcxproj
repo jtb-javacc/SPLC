@@ -74,14 +74,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>../jjt;../gen;$(IncludePath)</IncludePath>
+    <IncludePath>../rts;../jjt;../gen;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>../jjt;../gen;$(IncludePath)</IncludePath>
+    <IncludePath>../rts;../jjt;../gen;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -190,6 +190,10 @@
     <ClCompile Include="..\jjt\ASTWhileStatement.cc" />
     <ClCompile Include="..\jjt\ASTWriteStatement.cc" />
     <ClCompile Include="..\jjt\MyNode.cpp" />
+    <ClCompile Include="..\rts\Boolean.cpp" />
+    <ClCompile Include="..\rts\Integer.cpp" />
+    <ClCompile Include="..\rts\Object.cpp" />
+    <ClCompile Include="..\rts\Variable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\gen\CharStream.h" />
@@ -239,6 +243,10 @@
     <ClInclude Include="..\jjt\ASTWhileStatement.h" />
     <ClInclude Include="..\jjt\ASTWriteStatement.h" />
     <ClInclude Include="..\jjt\MyNode.h" />
+    <ClInclude Include="..\rts\Boolean.h" />
+    <ClInclude Include="..\rts\Integer.h" />
+    <ClInclude Include="..\rts\Object.h" />
+    <ClInclude Include="..\rts\Variable.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -11,6 +11,7 @@
 
   void ASTWriteStatement::interpret()
   {
+#ifdef FIXME
      if (symtab.get(name) == null)
         System.err.println("Undefined variable : " + name);
     else
@@ -21,5 +22,6 @@
         e.printStackTrace();
         System.exit(1);
       }
+#endif
   }
 

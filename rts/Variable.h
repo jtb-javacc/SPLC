@@ -13,6 +13,9 @@ class Variable : public Node {
 public:
 	Variable();
 	virtual ~Variable();
+
+private:
+	string name;
 };
 
 

@@ -9,7 +9,12 @@
 
 Integer::Integer() {
 }
+Integer::Integer(int value) : integer(value) {
+}
 
 Integer::~Integer() {
 }
 
+Integer* Integer::operator+(const Integer& value) {
+	return new Integer(integer + value.integer);
+}

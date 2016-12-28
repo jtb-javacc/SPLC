@@ -12,7 +12,7 @@
 
   void ASTNotNode::interpret()
   {
-     jjtGetChild(0).interpret();
+     jjtGetChild(0)->interpret();
      stack[top] = new Boolean(!((Boolean)stack[top]).booleanValue());
   }
 
