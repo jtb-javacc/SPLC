@@ -26,8 +26,7 @@ repositories {
 }
 compileJjtree {
 	language 'Cpp'
-    include 'ast/*.cc'
-    include 'ast/*.h'
+    include '*.cc'
     include '*.h'
     inputDirectory  = new File(projectDir, 'jjt')
     outputDirectory = new File(projectDir, 'gen')
