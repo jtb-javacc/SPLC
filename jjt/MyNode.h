@@ -1,4 +1,4 @@
-/* Copyright (c) 2006, Sun Microsystems, Inc.
+/* Copyright (c) 2006, Sreenivasa Viswanadha <sreeni@viswanadha.net>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -26,18 +26,41 @@
  * THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-/* JJT: 0.2.2 */
+#pragma once
 
-public class ASTId extends SimpleNode {
+#include <string>
+#include <map>
+#include <stack>
+using std::string;
+using std::map;
+using std::stack;
+/**
+ * Specialised node.
+ */
+class Node;
+class MyNode {
+	/** Symbol table */
+protected:
+	static map<string, Node*> symtab;
 
-  String name;
+	/** Stack for calculations. */
+	static stack<Node*> stack;
+	static int top;
 
-  public ASTId(int id) {
-    super(id);
-  }
 
-  public ASTId(SPLParser p, int id) {
-    super(p, id);
-  }
+/*
+ *
+ protected:
+	static Writer out = new PrintWriter(System.out);
+	static Reader in = new InputStreamReader(System.in);
 
-}
+public:
+	static void setIn(Reader in) {
+		MyNode.in = in;
+	}
+
+	static void setOut(Writer out) {
+		MyNode.out = out;
+	}
+	*/
+};
