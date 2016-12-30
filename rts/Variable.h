@@ -7,7 +7,11 @@
 
 #pragma once
 
+#include <string>
+using std::string;
+
 #include "Node.h"
+
 
 class Variable : public Node {
 public:

@@ -1,4 +1,5 @@
 #include "ASTWhileStatement.h"
+#include "Boolean.h"
 
   
   ASTWhileStatement::ASTWhileStatement(int id) : SimpleNode(id) {

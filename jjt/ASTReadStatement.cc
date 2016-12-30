@@ -33,7 +33,7 @@
     } catch (IOException e) {
       e.printStackTrace();
       System.exit(1);
-#endif
     }
+#endif
   }
 

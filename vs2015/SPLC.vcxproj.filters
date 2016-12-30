@@ -1,310 +1,107 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\SPL.jjt" />
     <None Include="..\gen\SPL.jj" />
+    <None Include="..\jjt\SPL.jjt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\jjt\ASTAddNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTAndNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTAssignment.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTBitwiseAndNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTBitwiseComplNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTBitwiseOrNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTBitwiseXorNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTBlock.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTCompilationUnit.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTDivNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTEQNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTFalseNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTGENode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTGTNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTId.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTIfStatement.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTIntConstNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTLENode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTLTNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTModNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTMulNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTNENode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTNotNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTOrNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTReadStatement.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTStatementExpression.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTSubtractNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTTrueNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTVarDeclaration.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTWhileStatement.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\ASTWriteStatement.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\gen\CharStream.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\gen\JJTSPLParserState.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\gen\ParseException.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\gen\SimpleNode.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\gen\SPLParser.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\gen\SPLParserTokenManager.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\gen\Token.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\gen\TokenMgrError.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\jjt\MyNode.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\rts\Boolean.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\rts\Integer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\rts\Object.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\rts\Variable.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClCompile Include="..\jjt\ASTAddNode.cc" />
+    <ClCompile Include="..\jjt\ASTAndNode.cc" />
+    <ClCompile Include="..\jjt\ASTAssignment.cc" />
+    <ClCompile Include="..\jjt\ASTBitwiseAndNode.cc" />
+    <ClCompile Include="..\jjt\ASTBitwiseComplNode.cc" />
+    <ClCompile Include="..\jjt\ASTBitwiseOrNode.cc" />
+    <ClCompile Include="..\jjt\ASTBitwiseXorNode.cc" />
+    <ClCompile Include="..\jjt\ASTBlock.cc" />
+    <ClCompile Include="..\jjt\ASTCompilationUnit.cc" />
+    <ClCompile Include="..\jjt\ASTDivNode.cc" />
+    <ClCompile Include="..\jjt\ASTEQNode.cc" />
+    <ClCompile Include="..\jjt\ASTFalseNode.cc" />
+    <ClCompile Include="..\jjt\ASTGENode.cc" />
+    <ClCompile Include="..\jjt\ASTGTNode.cc" />
+    <ClCompile Include="..\jjt\ASTId.cc" />
+    <ClCompile Include="..\jjt\ASTIfStatement.cc" />
+    <ClCompile Include="..\jjt\ASTIntConstNode.cc" />
+    <ClCompile Include="..\jjt\ASTLENode.cc" />
+    <ClCompile Include="..\jjt\ASTLTNode.cc" />
+    <ClCompile Include="..\jjt\ASTModNode.cc" />
+    <ClCompile Include="..\jjt\ASTMulNode.cc" />
+    <ClCompile Include="..\jjt\ASTNENode.cc" />
+    <ClCompile Include="..\jjt\ASTNotNode.cc" />
+    <ClCompile Include="..\jjt\ASTOrNode.cc" />
+    <ClCompile Include="..\jjt\ASTReadStatement.cc" />
+    <ClCompile Include="..\jjt\ASTStatementExpression.cc" />
+    <ClCompile Include="..\jjt\ASTSubtractNode.cc" />
+    <ClCompile Include="..\jjt\ASTTrueNode.cc" />
+    <ClCompile Include="..\jjt\ASTVarDeclaration.cc" />
+    <ClCompile Include="..\jjt\ASTWhileStatement.cc" />
+    <ClCompile Include="..\jjt\ASTWriteStatement.cc" />
+    <ClCompile Include="..\jjt\MyNode.cpp" />
+    <ClCompile Include="..\rts\Boolean.cpp" />
+    <ClCompile Include="..\rts\Integer.cpp" />
+    <ClCompile Include="..\rts\Object.cpp" />
+    <ClCompile Include="..\rts\Variable.cpp" />
+    <ClCompile Include="..\gen\CharStream.cc" />
+    <ClCompile Include="..\gen\JJTSPLParserState.cc" />
+    <ClCompile Include="..\gen\ParseException.cc" />
+    <ClCompile Include="..\gen\SimpleNode.cc" />
+    <ClCompile Include="..\gen\SPLParser.cc" />
+    <ClCompile Include="..\gen\SPLParserTokenManager.cc" />
+    <ClCompile Include="..\gen\Token.cc" />
+    <ClCompile Include="..\gen\TokenMgrError.cc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\jjt\ASTAddNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTAndNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTAssignment.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTBitwiseAndNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTBitwiseComplNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTBitwiseOrNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTBitwiseXorNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTBlock.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTCompilationUnit.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTDivNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTEQNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTFalseNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTGENode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTGTNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTId.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTIfStatement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTIntConstNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTLENode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTLTNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTModNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTMulNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTNENode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTNotNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTOrNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTReadStatement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTStatementExpression.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTSubtractNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTTrueNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTVarDeclaration.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTWhileStatement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\ASTWriteStatement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gen\CharStream.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gen\ErrorHandler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gen\JavaCC.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gen\JJTSPLParserState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gen\Node.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gen\ParseException.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gen\SimpleNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gen\SPLParser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gen\SPLParserConstants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gen\SPLParserTokenManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gen\SPLParserTree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gen\SPLParserTreeConstants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gen\Token.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gen\TokenManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gen\TokenMgrError.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\jjt\MyNode.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\rts\Variable.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\rts\Boolean.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\rts\Integer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\rts\Object.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="..\jjt\ASTAddNode.h" />
+    <ClInclude Include="..\jjt\ASTAndNode.h" />
+    <ClInclude Include="..\jjt\ASTAssignment.h" />
+    <ClInclude Include="..\jjt\ASTBitwiseAndNode.h" />
+    <ClInclude Include="..\jjt\ASTBitwiseComplNode.h" />
+    <ClInclude Include="..\jjt\ASTBitwiseOrNode.h" />
+    <ClInclude Include="..\jjt\ASTBitwiseXorNode.h" />
+    <ClInclude Include="..\jjt\ASTBlock.h" />
+    <ClInclude Include="..\jjt\ASTCompilationUnit.h" />
+    <ClInclude Include="..\jjt\ASTDivNode.h" />
+    <ClInclude Include="..\jjt\ASTEQNode.h" />
+    <ClInclude Include="..\jjt\ASTFalseNode.h" />
+    <ClInclude Include="..\jjt\ASTGENode.h" />
+    <ClInclude Include="..\jjt\ASTGTNode.h" />
+    <ClInclude Include="..\jjt\ASTId.h" />
+    <ClInclude Include="..\jjt\ASTIfStatement.h" />
+    <ClInclude Include="..\jjt\ASTIntConstNode.h" />
+    <ClInclude Include="..\jjt\ASTLENode.h" />
+    <ClInclude Include="..\jjt\ASTLTNode.h" />
+    <ClInclude Include="..\jjt\ASTModNode.h" />
+    <ClInclude Include="..\jjt\ASTMulNode.h" />
+    <ClInclude Include="..\jjt\ASTNENode.h" />
+    <ClInclude Include="..\jjt\ASTNotNode.h" />
+    <ClInclude Include="..\jjt\ASTOrNode.h" />
+    <ClInclude Include="..\jjt\ASTReadStatement.h" />
+    <ClInclude Include="..\jjt\ASTStatementExpression.h" />
+    <ClInclude Include="..\jjt\ASTSubtractNode.h" />
+    <ClInclude Include="..\jjt\ASTTrueNode.h" />
+    <ClInclude Include="..\jjt\ASTVarDeclaration.h" />
+    <ClInclude Include="..\jjt\ASTWhileStatement.h" />
+    <ClInclude Include="..\jjt\ASTWriteStatement.h" />
+    <ClInclude Include="..\jjt\MyNode.h" />
+    <ClInclude Include="..\jjt\Node.h" />
+    <ClInclude Include="..\rts\Boolean.h" />
+    <ClInclude Include="..\rts\Integer.h" />
+    <ClInclude Include="..\rts\Object.h" />
+    <ClInclude Include="..\rts\Variable.h" />
+    <ClInclude Include="..\gen\CharStream.h" />
+    <ClInclude Include="..\gen\ErrorHandler.h" />
+    <ClInclude Include="..\gen\JavaCC.h" />
+    <ClInclude Include="..\gen\JJTSPLParserState.h" />
+    <ClInclude Include="..\gen\ParseException.h" />
+    <ClInclude Include="..\gen\SimpleNode.h" />
+    <ClInclude Include="..\gen\SPLParser.h" />
+    <ClInclude Include="..\gen\SPLParserConstants.h" />
+    <ClInclude Include="..\gen\SPLParserTokenManager.h" />
+    <ClInclude Include="..\gen\SPLParserTree.h" />
+    <ClInclude Include="..\gen\SPLParserTreeConstants.h" />
+    <ClInclude Include="..\gen\Token.h" />
+    <ClInclude Include="..\gen\TokenManager.h" />
+    <ClInclude Include="..\gen\TokenMgrError.h" />
   </ItemGroup>
 </Project>

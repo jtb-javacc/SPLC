@@ -15,5 +15,7 @@ public:
   virtual ~ASTId();
   virtual void interpret();
 
+private:
+	string name;
 };
 

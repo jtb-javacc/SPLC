@@ -9,7 +9,7 @@
 
 #include "Node.h"
 
-class Boolean ; public Node {
+class Boolean : public Node {
 public:
 	Boolean();
 	Boolean(bool value);

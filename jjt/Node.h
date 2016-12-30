@@ -25,8 +25,7 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
  * THE POSSIBILITY OF SUCH DAMAGE.
  */
-#ifndef Node_h_
-#define Node_h_
+#pragma once
 
 #include <stdexcept>
 using std::runtime_error;
@@ -73,4 +72,3 @@ public:
 		throw runtime_error("unsupporte operation"); // It better not come here.
 	}
 };
-#endif

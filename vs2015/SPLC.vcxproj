@@ -147,6 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="..\gen\SPL.jj" />
+    <None Include="..\jjt\SPL.jjt" />
     <None Include="..\SPL.jjt" />
   </ItemGroup>
   <ItemGroup>
@@ -200,7 +201,6 @@
     <ClInclude Include="..\gen\ErrorHandler.h" />
     <ClInclude Include="..\gen\JavaCC.h" />
     <ClInclude Include="..\gen\JJTSPLParserState.h" />
-    <ClInclude Include="..\gen\Node.h" />
     <ClInclude Include="..\gen\ParseException.h" />
     <ClInclude Include="..\gen\SimpleNode.h" />
     <ClInclude Include="..\gen\SPLParser.h" />
@@ -243,6 +243,7 @@
     <ClInclude Include="..\jjt\ASTWhileStatement.h" />
     <ClInclude Include="..\jjt\ASTWriteStatement.h" />
     <ClInclude Include="..\jjt\MyNode.h" />
+    <ClInclude Include="..\jjt\Node.h" />
     <ClInclude Include="..\rts\Boolean.h" />
     <ClInclude Include="..\rts\Integer.h" />
     <ClInclude Include="..\rts\Object.h" />
