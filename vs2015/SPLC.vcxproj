@@ -148,7 +148,6 @@
   <ItemGroup>
     <None Include="..\gen\SPL.jj" />
     <None Include="..\jjt\SPL.jjt" />
-    <None Include="..\SPL.jjt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\gen\CharStream.cc" />
@@ -195,6 +194,7 @@
     <ClCompile Include="..\rts\Integer.cpp" />
     <ClCompile Include="..\rts\Object.cpp" />
     <ClCompile Include="..\rts\Variable.cpp" />
+    <ClCompile Include="..\SPLC.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\gen\CharStream.h" />

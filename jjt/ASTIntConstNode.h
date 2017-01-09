@@ -14,6 +14,10 @@ public:
            ASTIntConstNode(SPLParser *parser, int id);
   virtual ~ASTIntConstNode();
   virtual void interpret();
+  friend class SPLParser;
+
+private:
+	int val;
 
 };
 

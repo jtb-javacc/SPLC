@@ -15,7 +15,8 @@
      do {
        jjtGetChild(0)->interpret();
 
-       if (((Boolean)stack[top--]).booleanValue())
+	   unique_ptr<Boolean> top(static_cast<Boolean*>(stack.top()));stack.pop();
+       if (*top)
           jjtGetChild(1)->interpret();
        else
           break;

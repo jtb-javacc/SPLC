@@ -15,6 +15,33 @@ Integer::Integer(int value) : integer(value) {
 Integer::~Integer() {
 }
 
-Integer* Integer::operator+(const Integer& value) {
+Integer* Integer::operator+(const Integer& value) const {
 	return new Integer(integer + value.integer);
+}
+Integer* Integer::operator-(const Integer& value) const {
+	return new Integer(integer - value.integer);
+}
+Integer* Integer::operator*(const Integer& value) const {
+	return new Integer(integer * value.integer);
+}
+Integer* Integer::operator/(const Integer& value) const {
+	return new Integer(integer / value.integer);
+}
+Integer* Integer::operator%(const Integer& value) const {
+	return new Integer(integer % value.integer);
+}
+bool Integer::operator<(const Integer& value) const {
+	return integer < value.integer;
+}
+bool Integer::operator<=(const Integer& value) const {
+	return integer <= value.integer;
+}
+bool Integer::operator==(const Integer& value) const {
+	return integer == value.integer;
+}
+bool Integer::operator>=(const Integer& value) const {
+	return integer >= value.integer;
+}
+bool Integer::operator>(const Integer& value) const {
+	return integer > value.integer;
 }

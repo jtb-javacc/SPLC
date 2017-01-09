@@ -14,6 +14,7 @@ public:
            ASTId(SPLParser *parser, int id);
   virtual ~ASTId();
   virtual void interpret();
+  friend class SPLParser;
 
 private:
 	string name;

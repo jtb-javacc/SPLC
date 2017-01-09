@@ -15,7 +15,19 @@ public:
 	Integer(int value);
 	virtual ~Integer();
 
-	Integer* operator+(const Integer& value);
+	Integer* operator+(const Integer& value) const;
+	Integer* operator-(const Integer& value) const;
+	Integer* operator*(const Integer& value) const;
+	Integer* operator/(const Integer& value) const;
+	Integer* operator%(const Integer& value) const;
+
+	bool operator<  (const Integer& value) const;
+	bool operator<= (const Integer& value) const;
+	bool operator== (const Integer& value) const;
+	bool operator>= (const Integer& value) const;
+	bool operator>  (const Integer& value) const;
+
+	operator int() const { return integer; }
 
 private:
 	int integer;

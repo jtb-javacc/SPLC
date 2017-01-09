@@ -14,6 +14,7 @@ public:
            ASTVarDeclaration(SPLParser *parser, int id);
   virtual ~ASTVarDeclaration();
   virtual void interpret();
+  friend class SPLParser;
 
 private:
   string name;

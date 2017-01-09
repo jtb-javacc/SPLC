@@ -13,6 +13,6 @@
 
   void ASTIntConstNode::interpret()
   {
-     stack[++top] = new Integer(val);
+     stack.push(new Integer(val));
   }
 

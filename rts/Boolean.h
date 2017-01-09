@@ -11,11 +11,15 @@
 
 class Boolean : public Node {
 public:
-	Boolean();
-	Boolean(bool value);
+	Boolean(bool value = false);
 	virtual ~Boolean();
+
+	Boolean* operator||(const Boolean& value);
+	Boolean* operator&&(const Boolean& value);
+	operator bool() const { return boolean; }
+
 private:
-	bool boolean;
+	bool boolean = false;
 };
 
 

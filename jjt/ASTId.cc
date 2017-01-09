@@ -13,6 +13,6 @@
 
   void ASTId::interpret()
   {
-     stack[++top] = symtab.get(name);
+     stack.push(symtab.get(name));
   }
 

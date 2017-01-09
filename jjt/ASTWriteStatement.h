@@ -14,6 +14,10 @@ public:
            ASTWriteStatement(SPLParser *parser, int id);
   virtual ~ASTWriteStatement();
   virtual void interpret();
+  friend class SPLParser;
+
+private:
+	string name;
 
 };
 

@@ -14,7 +14,8 @@
   void ASTNotNode::interpret()
   {
      jjtGetChild(0)->interpret();
-     stack[top] = new Boolean(!((Boolean)stack[top]).booleanValue());
+	 unique_ptr<Boolean> top((Boolean*)stack.top()); stack.pop();
+	 stack.push(new Boolean(!*top));
   }
 
 

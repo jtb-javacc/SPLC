@@ -3,6 +3,7 @@
 #include "ASTVarDeclaration.h"
 #include "Boolean.h"
 #include "Integer.h"
+#include "SPLParserConstants.h"
 
   
   ASTVarDeclaration::ASTVarDeclaration(int id) : SimpleNode(id) {
@@ -16,7 +17,7 @@
   void ASTVarDeclaration::interpret()
   {
      if (type == BOOL)
-        symtab.put(name, new Boolean(false));
+        symtab[name] =  new Boolean(false);
      else
-        symtab.put(name, new Integer(0));
+		symtab[name] = new Integer(0);
   }
