@@ -6,10 +6,9 @@
  */
 
 #include "Integer.h"
+#include "SPLParserConstants.h"
 
-Integer::Integer() {
-}
-Integer::Integer(int value) : integer(value) {
+Integer::Integer(int value) : SimpleNode(INT), integer(value) {
 }
 
 Integer::~Integer() {

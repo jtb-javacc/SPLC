@@ -15,6 +15,7 @@ public:
   virtual ~ASTId();
   virtual void interpret();
   friend class SPLParser;
+  friend class ASTAssignment;
 
 private:
 	string name;

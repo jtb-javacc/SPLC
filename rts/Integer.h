@@ -7,12 +7,11 @@
 
 #pragma once
 
-#include "Node.h"
+#include "SimpleNode.h"
 
-class Integer : public Node {
+class Integer : public SimpleNode {
 public:
-	Integer();
-	Integer(int value);
+	Integer(int value = 0);
 	virtual ~Integer();
 
 	Integer* operator+(const Integer& value) const;

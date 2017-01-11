@@ -18,6 +18,7 @@
      jjtGetChild(0)->interpret();
      jjtGetChild(1)->interpret();
 
-     stack[--top] = new Boolean(((Integer)stack[top]).intValue() <
-                                ((Integer)stack[top + 1]).intValue());
+	 unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
+	 unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
+	 stack.push(new Boolean(*left < *right));
   }

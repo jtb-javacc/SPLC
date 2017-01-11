@@ -8,8 +8,32 @@
 
 #include <iostream>
 using namespace std;
+#include <fstream>
+#include <iomanip>
+#include <iostream>
+#include <string>
+#include <stdlib.h>
+#include "SPLParser.h"
 
-int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
-	return 0;
+#include "JavaCC.h"
+#include "SPLParserTokenManager.h"
+#include "ParseException.h"
+
+JAVACC_STRING_TYPE ReadFileFully(char *file_name) {
+	return "(1 + 2) * (a + b);\n";
+}
+
+int main(int argc, char**argv) {
+	cout << "!!!Hello World!!!" << endl;
+	JAVACC_STRING_TYPE s = ReadFileFully(argv[1]);
+	try {
+		CharStream *stream = new CharStream(s.c_str(), s.size() - 1, 1, 1);
+		SPLParserTokenManager *scanner = new SPLParserTokenManager(stream);
+		SPLParser parser(scanner);
+		parser.CompilationUnit();
+		Node* n = parser.rootNode();
+	} catch (const ParseException& e) {
+
+	}
+return 0;
 }

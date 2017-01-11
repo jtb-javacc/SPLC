@@ -13,6 +13,6 @@
   void ASTStatementExpression::interpret()
   {
      jjtGetChild(0)->interpret();
-     top--; //just throw away the value.
+     stack.pop(); //just throw away the value.
   }
 

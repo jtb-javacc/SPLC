@@ -2,6 +2,7 @@
 /* JavaCCOptions:MULTI=true,NODE_USES_PARSER=false,VISITOR=false,TRACK_TOKENS=true,NODE_PREFIX=AST,NODE_EXTENDS=MyNode,NODE_FACTORY=,SUPPORT_CLASS_VISIBILITY_PUBLIC=true */
 #include "ASTNENode.h"
 #include "Boolean.h"
+#include "Integer.h"
 
   
   ASTNENode::ASTNENode(int id) : SimpleNode(id) {
@@ -15,12 +16,17 @@
      jjtGetChild(0)->interpret();
      jjtGetChild(1)->interpret();
 
-     if (stack[top] instanceof Boolean)
-        stack[--top] = new Boolean(((Boolean)stack[top]).booleanValue() !=
-                                ((Boolean)stack[top + 1]).booleanValue());
-     else
-        stack[--top] = new Boolean(((Integer)stack[top]).intValue() !=
-                                ((Integer)stack[top + 1]).intValue());
+	 const Node* top = stack.top();
+	 if (typeid(*top) == typeid(Boolean)) {
+		 unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
+		 unique_ptr<Boolean> right((Boolean*)stack.top()); stack.pop();
+		 stack.push(new Boolean(*left != *right));
+
+     } else {
+		 unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
+		 unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
+		 stack.push(new Boolean(*left != *right));
+	 }
   }
 
 

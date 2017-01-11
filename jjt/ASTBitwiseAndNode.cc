@@ -16,7 +16,7 @@
      jjtGetChild(0)->interpret();
      jjtGetChild(1)->interpret();
 
-	 Node* top = stack.top();
+	 const Node* top = stack.top();
 	 if (typeid(*top) == typeid(Boolean)) {
 		 unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
 		 unique_ptr<Boolean> righ((Boolean*)stack.top()); stack.pop();

@@ -7,6 +7,5 @@
 
 #include "MyNode.h"
 
-int MyNode::top = -1;
-
-
+map<string, Node*> MyNode::symtab;
+stack<Node*>  MyNode::stack;

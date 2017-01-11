@@ -14,12 +14,14 @@
   {
      jjtGetChild(0)->interpret();
 
-     if (!((Boolean)stack[top]).booleanValue())
-     {
-        stack[top] = new Boolean(false);
-        return;
-     }
-
+	 const Node* top = stack.top();
+	 if (typeid(*top) == typeid(Boolean)) {
+		 const Boolean* boolean = (Boolean*)top;
+		 if (!*boolean) {
+			 stack.push(new Boolean(false));
+			 return;
+		 }
+	 }
      jjtGetChild(1)->interpret();
  
 	 unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();

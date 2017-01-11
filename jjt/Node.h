@@ -40,28 +40,29 @@ class Node {
   /** This method is called after the node has been made the current
     node.  It indicates that child nodes can now be added to it. */
 public:
-	void jjtOpen();
+	virtual void jjtOpen() const = 0;
 
   /** This method is called after all the child nodes have been
     added. */
-  void jjtClose();
+	virtual void jjtClose() const = 0;
 
   /** This pair of methods are used to inform the node of its
     parent. */
-  void jjtSetParent(Node* n);
+	virtual void jjtSetParent(Node* n) = 0;
+
   /** Get this node's parent. */
-  Node jjtGetParent();
+	virtual Node* jjtGetParent() const = 0;
 
   /** This method tells the node to add its argument to the node's
     list of children.  */
-  void jjtAddChild(Node* n, int i);
+  virtual void jjtAddChild(Node* n, int i) = 0;
 
   /** This method returns a child node.  The children are numbered
      from zero, left to right. */
-  Node* jjtGetChild(int i);
+  virtual Node* jjtGetChild(int i) const = 0;
 
   /** Return the number of children the node has. */
-  int jjtGetNumChildren();
+  virtual int jjtGetNumChildren() const = 0;
 
   /************************* Added by Sreeni. *******************/
 

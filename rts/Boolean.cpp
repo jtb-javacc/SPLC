@@ -6,8 +6,9 @@
  */
 
 #include "Boolean.h"
+#include "SPLParserConstants.h"
 
-Boolean::Boolean(bool value) : boolean(value){
+Boolean::Boolean(bool value) : SimpleNode(BOOL), boolean(value){
 }
 
 Boolean::~Boolean() {

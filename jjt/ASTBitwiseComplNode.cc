@@ -16,5 +16,7 @@
   {
      jjtGetChild(0)->interpret();
 
-     stack[top] = new Integer(~((Integer)stack[top]).intValue());
+	 unique_ptr<Integer> top((Integer*)stack.top()); stack.pop();
+
+     stack.push(new Integer(~(*top)));
   }

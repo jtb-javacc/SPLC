@@ -18,8 +18,11 @@
 	 const Node* top = stack.top();
 	 if (typeid(*top) == typeid(Boolean))
      {
-        stack.push(new Boolean(true));
-        return;
+        const Boolean* boolean = (Boolean*)top;
+		if (*boolean) {
+			stack.push(new Boolean(true));
+			return;
+		}
      }
 
      jjtGetChild(1)->interpret();

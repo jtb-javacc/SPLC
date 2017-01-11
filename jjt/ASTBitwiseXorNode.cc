@@ -18,10 +18,15 @@
      jjtGetChild(0)->interpret();
      jjtGetChild(1)->interpret();
 
-     if (stack[top] instanceof Boolean)
-        stack[--top] = new Boolean(((Boolean)stack[top]).booleanValue() ^
-                                ((Boolean)stack[top + 1]).booleanValue());
-     else if (stack[top] instanceof Integer)
-        stack[--top] = new Integer(((Integer)stack[top]).intValue() ^
-                                ((Integer)stack[top + 1]).intValue());
+	 const Node* top = stack.top();
+	 if (typeid(*top) == typeid(Boolean)) {
+		 unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
+		 unique_ptr<Boolean> righ((Boolean*)stack.top()); stack.pop();
+		 stack.push(new Boolean(*left ^ *righ));
+	 }
+	 if (typeid(*top) == typeid(Integer)) {
+		 unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
+		 unique_ptr<Integer> righ((Integer*)stack.top()); stack.pop();
+		 stack.push(new Integer(*left ^ *righ));
+	 }
   }

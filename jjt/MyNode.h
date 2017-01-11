@@ -47,7 +47,6 @@ protected:
 
 	/** Stack for calculations. */
 	static stack<Node*> stack;
-	static int top;
 
 
 /*

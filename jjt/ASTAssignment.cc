@@ -16,6 +16,9 @@
      string name;
 
      jjtGetChild(1)->interpret();
-     symtab.put(name = ((ASTId)jjtGetChild(0)).name, stack[top]);
+	 //    symtab.put(name = ((ASTId)jjtGetChild(0)).name, stack[top]);
+	 Node* top = stack.top();
+	 name =  ((ASTId*)jjtGetChild(0))->name;
+     symtab[name] = top;
   }
 
