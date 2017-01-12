@@ -24,7 +24,6 @@ JAVACC_STRING_TYPE ReadFileFully(char *file_name) {
 }
 
 int main(int argc, char**argv) {
-	cout << "!!!Hello World!!!" << endl;
 	JAVACC_STRING_TYPE s = ReadFileFully(argv[1]);
 	try {
 		CharStream *stream = new CharStream(s.c_str(), s.size() - 1, 1, 1);

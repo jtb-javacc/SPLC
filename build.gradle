@@ -48,19 +48,29 @@ model {
 					exportedHeaders {
 						srcDirs compileJjtree.inputDirectory, compileJjtree.outputDirectory
 					}
-			   }
-			   cpp {
+				}
+				runtime(CppSourceSet) {
+					source {
+						srcDir new File(projectDir, 'rts')
+						include "*.cpp"
+					}
+					exportedHeaders {
+						srcDir new File(projectDir, 'rts')
+					}
+					lib sources.generated
+				}
+				ast(CppSourceSet) {
+					source {
+						srcDir compileJjtree.inputDirectory
+						include "*.cc"
+					}
+					lib sources.generated
+					lib sources.runtime
+				}
+				cpp {
 					source {
 						srcDir projectDir
 						include "*.cpp"
-					}
-					source {
-						srcDir compileJjtree.inputDirectory
-						srcDir  new File(projectDir, 'rts')
-						include "*.cc"
-					}
-					exportedHeaders {
-						srcDirs compileJjtree.inputDirectory, compileJjtree.outputDirectory, new File(projectDir, 'rts')
 					}
 					lib sources.generated
 				}
