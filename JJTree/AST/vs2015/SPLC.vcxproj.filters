@@ -10,10 +10,29 @@
     <Filter Include="prs">
       <UniqueIdentifier>{4d39a42b-a5d8-4eaa-a077-d8fc67d8c9f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="spl">
+      <UniqueIdentifier>{a98fba61-212d-4f5f-8260-7be39110069f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="jjt">
+      <UniqueIdentifier>{d6a989f4-6ec6-4d66-b7a7-a8385d84aabc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vst">
+      <UniqueIdentifier>{f15b5191-0484-4e1d-bc74-7bed3e5acb4e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\jjt\SPL.jjt" />
-    <None Include="..\gen\SPL.jj" />
+    <None Include="..\spl\fact.spl">
+      <Filter>spl</Filter>
+    </None>
+    <None Include="..\spl\odd.spl">
+      <Filter>spl</Filter>
+    </None>
+    <None Include="..\spl\sqrt.spl">
+      <Filter>spl</Filter>
+    </None>
+    <None Include="..\jjt\SPL.jjt">
+      <Filter>jjt</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\jjt\ASTAddNode.cc">
@@ -128,9 +147,6 @@
     <ClCompile Include="..\gen\JJTSPLParserState.cc">
       <Filter>prs</Filter>
     </ClCompile>
-    <ClCompile Include="..\jjt\MyNode.cpp">
-      <Filter>prs</Filter>
-    </ClCompile>
     <ClCompile Include="..\gen\ParseException.cc">
       <Filter>prs</Filter>
     </ClCompile>
@@ -148,6 +164,12 @@
     </ClCompile>
     <ClCompile Include="..\gen\TokenMgrError.cc">
       <Filter>prs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\jjt\MyNode.cc">
+      <Filter>jjt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\vst\DumpVisitor.cpp">
+      <Filter>vst</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -268,9 +290,6 @@
     <ClInclude Include="..\gen\JJTSPLParserState.h">
       <Filter>prs</Filter>
     </ClInclude>
-    <ClInclude Include="..\jjt\MyNode.h">
-      <Filter>prs</Filter>
-    </ClInclude>
     <ClInclude Include="..\jjt\Node.h">
       <Filter>prs</Filter>
     </ClInclude>
@@ -303,6 +322,12 @@
     </ClInclude>
     <ClInclude Include="..\gen\TokenMgrError.h">
       <Filter>prs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\vst\DumpVisitor.h">
+      <Filter>vst</Filter>
+    </ClInclude>
+    <ClInclude Include="..\jjt\MyNode.h">
+      <Filter>jjt</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

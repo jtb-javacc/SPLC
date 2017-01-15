@@ -11,87 +11,37 @@ buildscript {
 
 //plugins { id "ca.coglinc.javacc" version "2.4.0" }
 
-apply plugin: 'ca.coglinc.javacc'
-apply plugin: 'cpp'
 
-version='7.0.0'
+subprojects {
+	apply plugin: 'ca.coglinc.javacc'
+	apply plugin: 'cpp'
 
-repositories {
-	mavenLocal()
-	mavenCentral()
+	repositories {
+	    mavenLocal()
+		mavenCentral()
+		
+	    dependencies {
+			javacc 'net.java.dev.javacc:javacc:7.0.2'
+	    }
+	}
 	
-    dependencies {
-		javacc 'net.java.dev.javacc:javacc:7.0.2'
-    }
-}
-compileJjtree {
-	language 'Cpp'
-    include '*.cc'
-    include '*.h'
-    inputDirectory  = new File(projectDir, 'jjt')
-    outputDirectory = new File(projectDir, 'gen')
-//    arguments = [grammar_encoding: 'UTF-8', static: 'false']
-}
-compileJavacc {
-	inputDirectory 	compileJjtree.outputDirectory
-	outputDirectory	compileJjtree.outputDirectory
-}
-model {
-    components { 
-        SPLC(NativeExecutableSpec) {
-			sources {
-				generated(CppSourceSet) {
-					source {
-						srcDir compileJjtree.outputDirectory
-						include "*.cc"
-					}
-					exportedHeaders {
-						srcDirs compileJjtree.inputDirectory, compileJjtree.outputDirectory
-					}
+	model {
+		binaries {
+			all {
+				// Define a preprocessor macro for every binary
+				cppCompiler.define "NDEBUG"
+	
+				// Define toolchain-specific compiler and linker options
+				if (toolChain in Gcc) {
+					cppCompiler.args "-O2", "-fno-access-control"
+					linker.args "-Xlinker", "-S"
 				}
-				runtime(CppSourceSet) {
-					source {
-						srcDir new File(projectDir, 'rts')
-						include "*.cpp"
-					}
-					exportedHeaders {
-						srcDir new File(projectDir, 'rts')
-					}
-					lib sources.generated
+				if (toolChain in VisualCpp) {
+					cppCompiler.args "/FS"
+					cppCompiler.args "/EHsc"
+					cppCompiler.args "/Zi"
+					linker.args "/DEBUG"
 				}
-				ast(CppSourceSet) {
-					source {
-						srcDir compileJjtree.inputDirectory
-						include "*.cc"
-					}
-					lib sources.generated
-					lib sources.runtime
-				}
-				cpp {
-					source {
-						srcDir projectDir
-						include "*.cpp"
-					}
-					lib sources.generated
-				}
-			}
-        }
-    }
-	binaries {
-		all {
-			// Define a preprocessor macro for every binary
-			cppCompiler.define "NDEBUG"
-
-			// Define toolchain-specific compiler and linker options
-			if (toolChain in Gcc) {
-				cppCompiler.args "-O2", "-fno-access-control"
-				linker.args "-Xlinker", "-S"
-			}
-			if (toolChain in VisualCpp) {
-				cppCompiler.args "/FS"
-				cppCompiler.args "/EHsc"
-				cppCompiler.args "/Zi"
-				linker.args "/DEBUG"
 			}
 		}
 	}

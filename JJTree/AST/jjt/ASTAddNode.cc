@@ -10,8 +10,7 @@
   }
   ASTAddNode::~ASTAddNode() {
   }
-
-  void  ASTAddNode::interpret()
+   void  ASTAddNode::interpret()
   {
      jjtGetChild(0)->interpret();
      jjtGetChild(1)->interpret();

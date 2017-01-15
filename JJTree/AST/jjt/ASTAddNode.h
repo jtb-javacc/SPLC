@@ -6,6 +6,7 @@
 
 
 class SPLParser;
+class SPLParserVisitor;
 
 
 class ASTAddNode : public SimpleNode {
@@ -14,5 +15,7 @@ public:
            ASTAddNode(SPLParser *parser, int id);
   virtual ~ASTAddNode();
   virtual void interpret();
+  /** Accept the visitor. **/
+  void* ASTAddNode::jjtAccept(SPLParserVisitor *visitor, void* data) const;
 };
 

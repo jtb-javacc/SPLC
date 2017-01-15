@@ -1,0 +1,55 @@
+	compileJjtree {
+		language 'Cpp'
+	    include '*.cc'
+	    include '*.h'
+	    inputDirectory  = new File(projectDir, 'jjt')
+	    outputDirectory = new File(projectDir, 'gen')
+	//    arguments = [grammar_encoding: 'UTF-8', static: 'false']
+	}
+	compileJavacc {
+		inputDirectory 	compileJjtree.outputDirectory
+		outputDirectory	compileJjtree.outputDirectory
+	}
+	
+ model {
+	    components { 
+        SPLC(NativeExecutableSpec) {
+			sources {
+				generated(CppSourceSet) {
+					source {
+						srcDir compileJjtree.outputDirectory
+						include "*.cc"
+					}
+					exportedHeaders {
+						srcDirs compileJjtree.inputDirectory, compileJjtree.outputDirectory
+					}
+				}
+				runtime(CppSourceSet) {
+					source {
+						srcDir new File(projectDir, 'rts')
+						include "*.cpp"
+					}
+					exportedHeaders {
+						srcDir new File(projectDir, 'rts')
+					}
+					lib sources.generated
+				}
+				ast(CppSourceSet) {
+					source {
+						srcDir compileJjtree.inputDirectory
+						include "*.cc"
+					}
+					lib sources.generated
+					lib sources.runtime
+				}
+				cpp {
+					source {
+						srcDir projectDir
+						include "*.cpp"
+					}
+					lib sources.generated
+				}
+			}
+        }
+    }
+ }
