@@ -16,9 +16,6 @@
     <Filter Include="jjt">
       <UniqueIdentifier>{d6a989f4-6ec6-4d66-b7a7-a8385d84aabc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="vst">
-      <UniqueIdentifier>{f15b5191-0484-4e1d-bc74-7bed3e5acb4e}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\spl\fact.spl">
@@ -167,9 +164,6 @@
     </ClCompile>
     <ClCompile Include="..\jjt\MyNode.cc">
       <Filter>jjt</Filter>
-    </ClCompile>
-    <ClCompile Include="..\vst\DumpVisitor.cpp">
-      <Filter>vst</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -322,9 +316,6 @@
     </ClInclude>
     <ClInclude Include="..\gen\TokenMgrError.h">
       <Filter>prs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\vst\DumpVisitor.h">
-      <Filter>vst</Filter>
     </ClInclude>
     <ClInclude Include="..\jjt\MyNode.h">
       <Filter>jjt</Filter>
