@@ -42,12 +42,23 @@
 					lib sources.generated
 					lib sources.runtime
 				}
+				visitor(CppSourceSet) {
+					source {
+						srcDir new File(projectDir, 'vst')
+						include "*.cpp"
+					}
+					exportedHeaders {
+						srcDir new File(projectDir, 'vst')
+					}
+					lib sources.generated
+				}
 				cpp {
 					source {
 						srcDir projectDir
 						include "*.cpp"
 					}
 					lib sources.generated
+					lib sources.visitor
 				}
 			}
         }
