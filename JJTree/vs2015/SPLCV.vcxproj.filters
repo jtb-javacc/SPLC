@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="jjt">
+      <UniqueIdentifier>{b3014c34-d3cc-40cf-b86e-2376e99961e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vst">
+      <UniqueIdentifier>{5af57cee-ea66-4b3a-9a5d-8e842d86ec0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gen">
+      <UniqueIdentifier>{edd3b8c9-11d3-45ef-9761-6b3f1d73852c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ast">
+      <UniqueIdentifier>{cba93f26-5f7b-401e-b0d8-ed1bbe17f522}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\VST\gen\ASTAddNode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTAndNode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTAssignment.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTBitwiseAndNode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTBitwiseComplNode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTBitwiseOrNode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTBitwiseXorNode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTDivNode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTEQNode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTFalseNode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTGENode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTGTNode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTLENode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTLTNode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTModNode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTMulNode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTNENode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTNotNode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTOrNode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTSubtractNode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTTrueNode.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\jjt\ASTId.cc">
+      <Filter>jjt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\jjt\ASTIntConstNode.cc">
+      <Filter>jjt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\jjt\ASTReadStatement.cc">
+      <Filter>jjt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\jjt\ASTVarDeclaration.cc">
+      <Filter>jjt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\jjt\ASTWriteStatement.cc">
+      <Filter>jjt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\CharStream.cc">
+      <Filter>gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\JJTSPLParserState.cc">
+      <Filter>gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\ParseException.cc">
+      <Filter>gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\SimpleNode.cc">
+      <Filter>gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\SPLParser.cc">
+      <Filter>gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\SPLParserTokenManager.cc">
+      <Filter>gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\Token.cc">
+      <Filter>gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\gen\TokenMgrError.cc">
+      <Filter>gen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\vst\DumpVisitor.cpp">
+      <Filter>vst</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\SPLC.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\VST\gen\ASTAddNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTAndNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTAssignment.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTBitwiseAndNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTBitwiseComplNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTBitwiseOrNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTBitwiseXorNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTDivNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTEQNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTFalseNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTGENode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTGTNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTLENode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTLTNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTModNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTMulNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTNENode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTNotNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTOrNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTSubtractNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTTrueNode.h">
+      <Filter>ast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\jjt\ASTId.h">
+      <Filter>jjt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\jjt\ASTIntConstNode.h">
+      <Filter>jjt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\jjt\ASTReadStatement.h">
+      <Filter>jjt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\jjt\ASTVarDeclaration.h">
+      <Filter>jjt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\jjt\ASTWriteStatement.h">
+      <Filter>jjt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\CharStream.h">
+      <Filter>gen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ErrorHandler.h">
+      <Filter>gen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\JavaCC.h">
+      <Filter>gen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\JJTSPLParserState.h">
+      <Filter>gen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\Node.h">
+      <Filter>gen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ParseException.h">
+      <Filter>gen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\SimpleNode.h">
+      <Filter>gen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\SPLParser.h">
+      <Filter>gen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\SPLParserConstants.h">
+      <Filter>gen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\SPLParserTokenManager.h">
+      <Filter>gen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\SPLParserTree.h">
+      <Filter>gen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\SPLParserTreeConstants.h">
+      <Filter>gen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\SPLParserVisitor.h">
+      <Filter>gen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\Token.h">
+      <Filter>gen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\TokenManager.h">
+      <Filter>gen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\TokenMgrError.h">
+      <Filter>gen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\vst\DumpVisitor.h">
+      <Filter>vst</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\VST\jjt\SPL.jjt">
+      <Filter>jjt</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -18,12 +18,97 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\VST\gen\ASTAddNode.cc" />
+    <ClCompile Include="..\VST\gen\ASTAndNode.cc" />
+    <ClCompile Include="..\VST\gen\ASTAssignment.cc" />
+    <ClCompile Include="..\VST\gen\ASTBitwiseAndNode.cc" />
+    <ClCompile Include="..\VST\gen\ASTBitwiseComplNode.cc" />
+    <ClCompile Include="..\VST\gen\ASTBitwiseOrNode.cc" />
+    <ClCompile Include="..\VST\gen\ASTBitwiseXorNode.cc" />
+    <ClCompile Include="..\VST\gen\ASTDivNode.cc" />
+    <ClCompile Include="..\VST\gen\ASTEQNode.cc" />
+    <ClCompile Include="..\VST\gen\ASTFalseNode.cc" />
+    <ClCompile Include="..\VST\gen\ASTGENode.cc" />
+    <ClCompile Include="..\VST\gen\ASTGTNode.cc" />
+    <ClCompile Include="..\VST\gen\ASTLENode.cc" />
+    <ClCompile Include="..\VST\gen\ASTLTNode.cc" />
+    <ClCompile Include="..\VST\gen\ASTModNode.cc" />
+    <ClCompile Include="..\VST\gen\ASTMulNode.cc" />
+    <ClCompile Include="..\VST\gen\ASTNENode.cc" />
+    <ClCompile Include="..\VST\gen\ASTNotNode.cc" />
+    <ClCompile Include="..\VST\gen\ASTOrNode.cc" />
+    <ClCompile Include="..\VST\gen\ASTSubtractNode.cc" />
+    <ClCompile Include="..\VST\gen\ASTTrueNode.cc" />
+    <ClCompile Include="..\VST\gen\CharStream.cc" />
+    <ClCompile Include="..\VST\gen\JJTSPLParserState.cc" />
+    <ClCompile Include="..\VST\gen\ParseException.cc" />
+    <ClCompile Include="..\VST\gen\SimpleNode.cc" />
+    <ClCompile Include="..\VST\gen\SPLParser.cc" />
+    <ClCompile Include="..\VST\gen\SPLParserTokenManager.cc" />
+    <ClCompile Include="..\VST\gen\Token.cc" />
+    <ClCompile Include="..\VST\gen\TokenMgrError.cc" />
+    <ClCompile Include="..\VST\jjt\ASTId.cc" />
+    <ClCompile Include="..\VST\jjt\ASTIntConstNode.cc" />
+    <ClCompile Include="..\VST\jjt\ASTReadStatement.cc" />
+    <ClCompile Include="..\VST\jjt\ASTVarDeclaration.cc" />
+    <ClCompile Include="..\VST\jjt\ASTWriteStatement.cc" />
+    <ClCompile Include="..\VST\SPLC.cpp" />
+    <ClCompile Include="..\VST\vst\DumpVisitor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\VST\gen\ASTAddNode.h" />
+    <ClInclude Include="..\VST\gen\ASTAndNode.h" />
+    <ClInclude Include="..\VST\gen\ASTAssignment.h" />
+    <ClInclude Include="..\VST\gen\ASTBitwiseAndNode.h" />
+    <ClInclude Include="..\VST\gen\ASTBitwiseComplNode.h" />
+    <ClInclude Include="..\VST\gen\ASTBitwiseOrNode.h" />
+    <ClInclude Include="..\VST\gen\ASTBitwiseXorNode.h" />
+    <ClInclude Include="..\VST\gen\ASTDivNode.h" />
+    <ClInclude Include="..\VST\gen\ASTEQNode.h" />
+    <ClInclude Include="..\VST\gen\ASTFalseNode.h" />
+    <ClInclude Include="..\VST\gen\ASTGENode.h" />
+    <ClInclude Include="..\VST\gen\ASTGTNode.h" />
+    <ClInclude Include="..\VST\gen\ASTLENode.h" />
+    <ClInclude Include="..\VST\gen\ASTLTNode.h" />
+    <ClInclude Include="..\VST\gen\ASTModNode.h" />
+    <ClInclude Include="..\VST\gen\ASTMulNode.h" />
+    <ClInclude Include="..\VST\gen\ASTNENode.h" />
+    <ClInclude Include="..\VST\gen\ASTNotNode.h" />
+    <ClInclude Include="..\VST\gen\ASTOrNode.h" />
+    <ClInclude Include="..\VST\gen\ASTSubtractNode.h" />
+    <ClInclude Include="..\VST\gen\ASTTrueNode.h" />
+    <ClInclude Include="..\VST\gen\CharStream.h" />
+    <ClInclude Include="..\VST\gen\ErrorHandler.h" />
+    <ClInclude Include="..\VST\gen\JavaCC.h" />
+    <ClInclude Include="..\VST\gen\JJTSPLParserState.h" />
+    <ClInclude Include="..\VST\gen\Node.h" />
+    <ClInclude Include="..\VST\gen\ParseException.h" />
+    <ClInclude Include="..\VST\gen\SimpleNode.h" />
+    <ClInclude Include="..\VST\gen\SPLParser.h" />
+    <ClInclude Include="..\VST\gen\SPLParserConstants.h" />
+    <ClInclude Include="..\VST\gen\SPLParserTokenManager.h" />
+    <ClInclude Include="..\VST\gen\SPLParserTree.h" />
+    <ClInclude Include="..\VST\gen\SPLParserTreeConstants.h" />
+    <ClInclude Include="..\VST\gen\SPLParserVisitor.h" />
+    <ClInclude Include="..\VST\gen\Token.h" />
+    <ClInclude Include="..\VST\gen\TokenManager.h" />
+    <ClInclude Include="..\VST\gen\TokenMgrError.h" />
+    <ClInclude Include="..\VST\jjt\ASTId.h" />
+    <ClInclude Include="..\VST\jjt\ASTIntConstNode.h" />
+    <ClInclude Include="..\VST\jjt\ASTReadStatement.h" />
+    <ClInclude Include="..\VST\jjt\ASTVarDeclaration.h" />
+    <ClInclude Include="..\VST\jjt\ASTWriteStatement.h" />
+    <ClInclude Include="..\VST\vst\DumpVisitor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\VST\jjt\SPL.jjt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{33AFF11E-ECE1-4CE2-8794-E470286BB496}</ProjectGuid>
+    <ProjectGuid>{F4C1863F-BEE0-4F15-9C66-37BF07E1DC05}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SPLC</RootNamespace>
+    <RootNamespace>SPLCV</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <ProjectName>SPLCV</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -75,14 +160,18 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>../vst;../rts;../jjt;../gen;$(IncludePath)</IncludePath>
+    <IncludePath>../VST/vst;../VST/rts;../VST/jjt;../VST/gen;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>../vst;../rts;../jjt;../gen;$(IncludePath)</IncludePath>
+    <IncludePath>../VST/vst;../VST/rts;../VST/jjt;../VST/gen;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -104,7 +193,8 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/FS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -137,7 +227,8 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_SCL_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>/FS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,102 +237,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <None Include="..\jjt\SPL.jjt" />
-    <None Include="..\spl\fact.spl" />
-    <None Include="..\spl\odd.spl" />
-    <None Include="..\spl\sqrt.spl" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\gen\ASTAddNode.cc" />
-    <ClCompile Include="..\gen\ASTAndNode.cc" />
-    <ClCompile Include="..\gen\ASTAssignment.cc" />
-    <ClCompile Include="..\gen\ASTBitwiseAndNode.cc" />
-    <ClCompile Include="..\gen\ASTBitwiseComplNode.cc" />
-    <ClCompile Include="..\gen\ASTBitwiseOrNode.cc" />
-    <ClCompile Include="..\gen\ASTBitwiseXorNode.cc" />
-    <ClCompile Include="..\gen\ASTDivNode.cc" />
-    <ClCompile Include="..\gen\ASTEQNode.cc" />
-    <ClCompile Include="..\gen\ASTFalseNode.cc" />
-    <ClCompile Include="..\gen\ASTGENode.cc" />
-    <ClCompile Include="..\gen\ASTGTNode.cc" />
-    <ClCompile Include="..\gen\ASTLENode.cc" />
-    <ClCompile Include="..\gen\ASTLTNode.cc" />
-    <ClCompile Include="..\gen\ASTModNode.cc" />
-    <ClCompile Include="..\gen\ASTMulNode.cc" />
-    <ClCompile Include="..\gen\ASTNENode.cc" />
-    <ClCompile Include="..\gen\ASTNotNode.cc" />
-    <ClCompile Include="..\gen\ASTOrNode.cc" />
-    <ClCompile Include="..\gen\ASTSubtractNode.cc" />
-    <ClCompile Include="..\gen\ASTTrueNode.cc" />
-    <ClCompile Include="..\gen\CharStream.cc" />
-    <ClCompile Include="..\gen\JJTSPLParserState.cc" />
-    <ClCompile Include="..\gen\ParseException.cc" />
-    <ClCompile Include="..\gen\SimpleNode.cc" />
-    <ClCompile Include="..\gen\SPLParser.cc" />
-    <ClCompile Include="..\gen\SPLParserTokenManager.cc" />
-    <ClCompile Include="..\gen\Token.cc" />
-    <ClCompile Include="..\gen\TokenMgrError.cc" />
-    <ClCompile Include="..\jjt\ASTId.cc" />
-    <ClCompile Include="..\jjt\ASTIntConstNode.cc" />
-    <ClCompile Include="..\jjt\ASTReadStatement.cc" />
-    <ClCompile Include="..\jjt\ASTVarDeclaration.cc" />
-    <ClCompile Include="..\jjt\ASTWriteStatement.cc" />
-    <ClCompile Include="..\rts\Boolean.cpp" />
-    <ClCompile Include="..\rts\Integer.cpp" />
-    <ClCompile Include="..\rts\Object.cpp" />
-    <ClCompile Include="..\rts\Variable.cpp" />
-    <ClCompile Include="..\SPLC.cpp" />
-    <ClCompile Include="..\vst\DumpVisitor.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\gen\ASTAddNode.h" />
-    <ClInclude Include="..\gen\ASTAndNode.h" />
-    <ClInclude Include="..\gen\ASTAssignment.h" />
-    <ClInclude Include="..\gen\ASTBitwiseAndNode.h" />
-    <ClInclude Include="..\gen\ASTBitwiseComplNode.h" />
-    <ClInclude Include="..\gen\ASTBitwiseOrNode.h" />
-    <ClInclude Include="..\gen\ASTBitwiseXorNode.h" />
-    <ClInclude Include="..\gen\ASTDivNode.h" />
-    <ClInclude Include="..\gen\ASTEQNode.h" />
-    <ClInclude Include="..\gen\ASTFalseNode.h" />
-    <ClInclude Include="..\gen\ASTGENode.h" />
-    <ClInclude Include="..\gen\ASTGTNode.h" />
-    <ClInclude Include="..\gen\ASTLENode.h" />
-    <ClInclude Include="..\gen\ASTLTNode.h" />
-    <ClInclude Include="..\gen\ASTModNode.h" />
-    <ClInclude Include="..\gen\ASTMulNode.h" />
-    <ClInclude Include="..\gen\ASTNENode.h" />
-    <ClInclude Include="..\gen\ASTNotNode.h" />
-    <ClInclude Include="..\gen\ASTOrNode.h" />
-    <ClInclude Include="..\gen\ASTSubtractNode.h" />
-    <ClInclude Include="..\gen\ASTTrueNode.h" />
-    <ClInclude Include="..\gen\CharStream.h" />
-    <ClInclude Include="..\gen\ErrorHandler.h" />
-    <ClInclude Include="..\gen\JavaCC.h" />
-    <ClInclude Include="..\gen\JJTSPLParserState.h" />
-    <ClInclude Include="..\gen\ParseException.h" />
-    <ClInclude Include="..\gen\SimpleNode.h" />
-    <ClInclude Include="..\gen\SPLParser.h" />
-    <ClInclude Include="..\gen\SPLParserConstants.h" />
-    <ClInclude Include="..\gen\SPLParserTokenManager.h" />
-    <ClInclude Include="..\gen\SPLParserTree.h" />
-    <ClInclude Include="..\gen\SPLParserTreeConstants.h" />
-    <ClInclude Include="..\gen\Token.h" />
-    <ClInclude Include="..\gen\TokenManager.h" />
-    <ClInclude Include="..\gen\TokenMgrError.h" />
-    <ClInclude Include="..\jjt\ASTId.h" />
-    <ClInclude Include="..\jjt\ASTIntConstNode.h" />
-    <ClInclude Include="..\jjt\ASTReadStatement.h" />
-    <ClInclude Include="..\jjt\ASTVarDeclaration.h" />
-    <ClInclude Include="..\jjt\ASTWriteStatement.h" />
-    <ClInclude Include="..\jjt\Node.h" />
-    <ClInclude Include="..\rts\Boolean.h" />
-    <ClInclude Include="..\rts\Integer.h" />
-    <ClInclude Include="..\rts\Object.h" />
-    <ClInclude Include="..\rts\Variable.h" />
-    <ClInclude Include="..\vst\DumpVisitor.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
