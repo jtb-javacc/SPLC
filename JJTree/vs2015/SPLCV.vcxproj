@@ -53,8 +53,13 @@
     <ClCompile Include="..\VST\jjt\ASTReadStatement.cc" />
     <ClCompile Include="..\VST\jjt\ASTVarDeclaration.cc" />
     <ClCompile Include="..\VST\jjt\ASTWriteStatement.cc" />
+    <ClCompile Include="..\VST\rts\Boolean.cpp" />
+    <ClCompile Include="..\VST\rts\Integer.cpp" />
+    <ClCompile Include="..\VST\rts\Object.cpp" />
+    <ClCompile Include="..\VST\rts\Variable.cpp" />
     <ClCompile Include="..\VST\SPLC.cpp" />
     <ClCompile Include="..\VST\vst\DumpVisitor.cpp" />
+    <ClCompile Include="..\VST\vst\Interpret.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\VST\gen\ASTAddNode.h" />
@@ -99,7 +104,12 @@
     <ClInclude Include="..\VST\jjt\ASTReadStatement.h" />
     <ClInclude Include="..\VST\jjt\ASTVarDeclaration.h" />
     <ClInclude Include="..\VST\jjt\ASTWriteStatement.h" />
+    <ClInclude Include="..\VST\rts\Boolean.h" />
+    <ClInclude Include="..\VST\rts\Integer.h" />
+    <ClInclude Include="..\VST\rts\Object.h" />
+    <ClInclude Include="..\VST\rts\Variable.h" />
     <ClInclude Include="..\VST\vst\DumpVisitor.h" />
+    <ClInclude Include="..\VST\vst\Interpret.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\VST\jjt\SPL.jjt" />

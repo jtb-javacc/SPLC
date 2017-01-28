@@ -14,7 +14,9 @@ public:
 
   /** Accept the visitor. **/
   virtual void jjtAccept(SPLParserVisitor *visitor, void* data) const ;
+  friend class Interpret;
   friend class SPLParser;
+
 private:
 	JJString name;
 };

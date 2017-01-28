@@ -19,6 +19,7 @@ public:
 	virtual ~Variable();
 
 private:
+	int type;
 	string name;
 };
 

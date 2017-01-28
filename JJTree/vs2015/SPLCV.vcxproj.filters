@@ -13,6 +13,9 @@
     <Filter Include="ast">
       <UniqueIdentifier>{cba93f26-5f7b-401e-b0d8-ed1bbe17f522}</UniqueIdentifier>
     </Filter>
+    <Filter Include="rts">
+      <UniqueIdentifier>{4d5e40b3-cbca-4005-922e-64013c56ae38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\VST\gen\ASTAddNode.cc">
@@ -121,6 +124,21 @@
       <Filter>vst</Filter>
     </ClCompile>
     <ClCompile Include="..\VST\SPLC.cpp" />
+    <ClCompile Include="..\VST\vst\Interpret.cpp">
+      <Filter>vst</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\rts\Boolean.cpp">
+      <Filter>rts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\rts\Integer.cpp">
+      <Filter>rts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\rts\Object.cpp">
+      <Filter>rts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\VST\rts\Variable.cpp">
+      <Filter>rts</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\VST\gen\ASTAddNode.h">
@@ -251,6 +269,21 @@
     </ClInclude>
     <ClInclude Include="..\VST\vst\DumpVisitor.h">
       <Filter>vst</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\vst\Interpret.h">
+      <Filter>vst</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\rts\Boolean.h">
+      <Filter>rts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\rts\Integer.h">
+      <Filter>rts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\rts\Object.h">
+      <Filter>rts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\rts\Variable.h">
+      <Filter>rts</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
