@@ -5,6 +5,11 @@
  *      Author: FrancisANDRE
  */
 
+#include <memory>
+#include <stdexcept>
+using std::unique_ptr;
+using std::runtime_error;
+
 #include "Interpret.h"
 #include "Variable.h"
 #include "Boolean.h"
@@ -17,7 +22,14 @@ Interpret::Interpret() {
 Interpret::~Interpret() {
 }
 
+void Interpret::visit(const SimpleNode *node, void* data) {
+	node->childrenAccept(this, data);
+}
+void Interpret::visit(const ASTCompilationUnit *node, void* data) {
+	node->childrenAccept(this, data);
+}
 void Interpret::visit(const ASTVarDeclaration *node, void* data) {
+	node->childrenAccept(this, data);
 	{
 		if (node->type == BOOL)
 			symtab[node->name] = new Boolean(false);
@@ -27,52 +39,242 @@ void Interpret::visit(const ASTVarDeclaration *node, void* data) {
 
 }
 void Interpret::visit(const ASTAssignment *node, void* data) {
+	node->childrenAccept(this, data);
+	string name;
+
+	//    symtab.put(name = ((ASTId)jjtGetChild(0)).name, stack[top]);
+	Node* top = stack.top();stack.pop();
+	//name = ((ASTId*)jjtGetChild(0))->name;
+	symtab[name] = top;
 }
 void Interpret::visit(const ASTOrNode *node, void* data) {
+	node->children[0]->jjtAccept(this, data);
+	const Node* top = stack.top();
+	if (typeid(*top) == typeid(Boolean)) {
+		const Boolean* boolean = (Boolean*)top;
+		if (*boolean) {
+			stack.push(new Boolean(true));
+			return;
+		}
+	}
+
+	node->children[1]->jjtAccept(this, data);
+	unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
+	unique_ptr<Boolean> right((Boolean*)stack.top()); stack.pop();
+	stack.push(*left || *right);
 }
 void Interpret::visit(const ASTAndNode *node, void* data) {
-}
-void Interpret::visit(const ASTBitwiseOrNode *node, void* data) {
-}
-void Interpret::visit(const ASTBitwiseXorNode *node, void* data) {
-}
-void Interpret::visit(const ASTBitwiseAndNode *node, void* data) {
-}
-void Interpret::visit(const ASTEQNode *node, void* data) {
-}
-void Interpret::visit(const ASTNENode *node, void* data) {
-}
-void Interpret::visit(const ASTLTNode *node, void* data) {
-}
-void Interpret::visit(const ASTGTNode *node, void* data) {
-}
-void Interpret::visit(const ASTLENode *node, void* data) {
-}
-void Interpret::visit(const ASTGENode *node, void* data) {
-}
-void Interpret::visit(const ASTAddNode *node, void* data) {
-}
-void Interpret::visit(const ASTSubtractNode *node, void* data) {
-}
-void Interpret::visit(const ASTMulNode *node, void* data) {
-}
-void Interpret::visit(const ASTDivNode *node, void* data) {
-}
-void Interpret::visit(const ASTModNode *node, void* data) {
+	node->children[0]->jjtAccept(this, data);
+	const Node* top = stack.top();
+
+	if (typeid(*top) == typeid(Boolean)) {
+		const Boolean* boolean = (Boolean*)top;
+		if (!*boolean) {
+			stack.push(new Boolean(false));
+			return;
+		}
+	}
+	node->children[1]->jjtAccept(this, data);
+
+	unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
+	unique_ptr<Boolean> right((Boolean*)stack.top()); stack.pop();
+	stack.push(new Boolean(*left || *right));
 }
 void Interpret::visit(const ASTBitwiseComplNode *node, void* data) {
+	node->childrenAccept(this, data);
+	unique_ptr<Integer> top((Integer*)stack.top()); stack.pop();
+	stack.push(new Integer(~(*top)));
+}
+void Interpret::visit(const ASTBitwiseOrNode *node, void* data) {
+	node->childrenAccept(this, data);
+	const Node* top = stack.top();
+	if (typeid(*top) == typeid(Boolean)) {
+		unique_ptr<Boolean> left((Boolean*)stack.top());
+		stack.pop();
+		unique_ptr<Boolean> righ((Boolean*)stack.top());
+		stack.pop();
+		stack.push(new Boolean(*left | *righ));
+	} else if (typeid(*top) == typeid(Integer)) {
+		unique_ptr<Integer> left((Integer*)stack.top());
+		stack.pop();
+		unique_ptr<Integer> righ((Integer*)stack.top());
+		stack.pop();
+		stack.push(new Integer(*left | *righ));
+	} else
+		throw runtime_error("Invalid node on top of stack");
+}
+void Interpret::visit(const ASTBitwiseXorNode *node, void* data) {
+	node->childrenAccept(this, data);
+	const Node* top = stack.top();
+	if (typeid(*top) == typeid(Boolean)) {
+		unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
+		unique_ptr<Boolean> righ((Boolean*)stack.top()); stack.pop();
+		stack.push(new Boolean(*left ^ *righ));
+	} else if (typeid(*top) == typeid(Integer)) {
+		unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
+		unique_ptr<Integer> righ((Integer*)stack.top()); stack.pop();
+		stack.push(new Integer(*left ^ *righ));
+	} else
+		throw runtime_error("Invalid node on top of stack");
+}
+void Interpret::visit(const ASTBitwiseAndNode *node, void* data) {
+	node->childrenAccept(this, data);
+	const Node* top = stack.top();
+	if (typeid(*top) == typeid(Boolean)) {
+		unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
+		unique_ptr<Boolean> righ((Boolean*)stack.top()); stack.pop();
+		stack.push(new Boolean(*left & *righ));
+	} else if (typeid(*top) == typeid(Integer)) {
+		unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
+		unique_ptr<Integer> righ((Integer*)stack.top()); stack.pop();
+		stack.push(new Integer(*left & *righ));
+	} else
+		throw runtime_error("Invalid node on top of stack");
+}
+void Interpret::visit(const ASTEQNode *node, void* data) {
+	node->childrenAccept(this, data);
+	const Node* top = stack.top();
+	if (typeid(*top) == typeid(Boolean)) {
+		unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
+		unique_ptr<Boolean> right((Boolean*)stack.top()); stack.pop();
+		stack.push(new Boolean(*left == *right));
+
+	} else if (typeid(*top) == typeid(Integer)) {
+		unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
+		unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
+		stack.push(new Boolean(*left == *right));
+	} else
+		throw runtime_error("Invalid node on top of stack");
+}
+void Interpret::visit(const ASTNENode *node, void* data) {
+	node->childrenAccept(this, data);
+	const Node* top = stack.top();
+	if (typeid(*top) == typeid(Boolean)) {
+		unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
+		unique_ptr<Boolean> right((Boolean*)stack.top()); stack.pop();
+		stack.push(new Boolean(*left != *right));
+
+	} else if (typeid(*top) == typeid(Integer)) {
+		unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
+		unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
+		stack.push(new Boolean(*left != *right));
+	} else
+		throw runtime_error("Invalid node on top of stack");
+}
+void Interpret::visit(const ASTLTNode *node, void* data) {
+	node->childrenAccept(this, data);
+	const Node* top = stack.top();
+	if (typeid(*top) == typeid(Boolean)) {
+		unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
+		unique_ptr<Boolean> right((Boolean*)stack.top()); stack.pop();
+		stack.push(new Boolean(*left < *right));
+
+	} else if (typeid(*top) == typeid(Integer)) {
+		unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
+		unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
+		stack.push(new Boolean(*left < *right));
+	} else
+		throw runtime_error("Invalid node on top of stack");
+}
+void Interpret::visit(const ASTGTNode *node, void* data) {
+	node->childrenAccept(this, data);
+	const Node* top = stack.top();
+	if (typeid(*top) == typeid(Boolean)) {
+		unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
+		unique_ptr<Boolean> right((Boolean*)stack.top());stack.pop();
+		stack.push(new Boolean(*left > *right));
+
+	} else if (typeid(*top) == typeid(Integer)) {
+		unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
+		unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
+		stack.push(new Boolean(*left > *right));
+	} else
+		throw runtime_error("Invalid node on top of stack");
+}
+void Interpret::visit(const ASTLENode *node, void* data) {
+	node->childrenAccept(this, data);
+	const Node* top = stack.top();
+	if (typeid(*top) == typeid(Boolean)) {
+		unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
+		unique_ptr<Boolean> right((Boolean*)stack.top()); stack.pop();
+		stack.push(new Boolean(*left <= *right));
+
+	} else if (typeid(*top) == typeid(Integer)) {
+		unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
+		unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
+		stack.push(new Boolean(*left <= *right));
+	} else
+		throw runtime_error("Invalid node on top of stack");
+}
+void Interpret::visit(const ASTGENode *node, void* data) {
+	node->childrenAccept(this, data);
+	const Node* top = stack.top();
+	if (typeid(*top) == typeid(Boolean)) {
+		unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
+		unique_ptr<Boolean> right((Boolean*)stack.top()); stack.pop();
+		stack.push(new Boolean(*left >= *right));
+
+	} else if (typeid(*top) == typeid(Integer)) {
+		unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
+		unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
+		stack.push(new Boolean(*left >= *right));
+	} else
+		throw runtime_error("Invalid node on top of stack");
+}
+void Interpret::visit(const ASTAddNode *node, void* data) {
+	node->childrenAccept(this, data);
+	unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
+	unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
+	stack.push(*left + *right);
+}
+void Interpret::visit(const ASTSubtractNode *node, void* data) {
+	node->childrenAccept(this, data);
+	unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
+	unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
+	stack.push(*left - *right);
+}
+void Interpret::visit(const ASTMulNode *node, void* data) {
+	node->childrenAccept(this, data);
+	unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
+	unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
+	stack.push(*left * *right);
+}
+void Interpret::visit(const ASTDivNode *node, void* data) {
+	node->childrenAccept(this, data);
+	unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
+	unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
+	stack.push(*left / *right);
+}
+void Interpret::visit(const ASTModNode *node, void* data) {
+	node->childrenAccept(this, data);
+	unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
+	unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
+	stack.push(*left % *right);
 }
 void Interpret::visit(const ASTNotNode *node, void* data) {
+	node->childrenAccept(this, data);
+	unique_ptr<Boolean> top((Boolean*)stack.top()); stack.pop();
+	stack.push(new Boolean(!*top));
 }
 void Interpret::visit(const ASTId *node, void* data) {
+	node->childrenAccept(this, data);
+	stack.push(symtab[node->name]);
 }
 void Interpret::visit(const ASTIntConstNode *node, void* data) {
+	node->childrenAccept(this, data);
+	stack.push(new Integer(node->val));
 }
 void Interpret::visit(const ASTTrueNode *node, void* data) {
+	node->childrenAccept(this, data);
+	stack.push(new Boolean(true));
 }
 void Interpret::visit(const ASTFalseNode *node, void* data) {
+	node->childrenAccept(this, data);
+	stack.push(new Boolean(false));
 }
 void Interpret::visit(const ASTReadStatement *node, void* data) {
+	node->childrenAccept(this, data);
 }
 void Interpret::visit(const ASTWriteStatement *node, void* data) {
+	node->childrenAccept(this, data);
 }

@@ -26,6 +26,7 @@
     <ClCompile Include="..\VST\gen\ASTBitwiseComplNode.cc" />
     <ClCompile Include="..\VST\gen\ASTBitwiseOrNode.cc" />
     <ClCompile Include="..\VST\gen\ASTBitwiseXorNode.cc" />
+    <ClCompile Include="..\VST\gen\ASTCompilationUnit.cc" />
     <ClCompile Include="..\VST\gen\ASTDivNode.cc" />
     <ClCompile Include="..\VST\gen\ASTEQNode.cc" />
     <ClCompile Include="..\VST\gen\ASTFalseNode.cc" />
@@ -69,6 +70,7 @@
     <ClInclude Include="..\VST\gen\ASTBitwiseComplNode.h" />
     <ClInclude Include="..\VST\gen\ASTBitwiseOrNode.h" />
     <ClInclude Include="..\VST\gen\ASTBitwiseXorNode.h" />
+    <ClInclude Include="..\VST\gen\ASTCompilationUnit.h" />
     <ClInclude Include="..\VST\gen\ASTDivNode.h" />
     <ClInclude Include="..\VST\gen\ASTEQNode.h" />
     <ClInclude Include="..\VST\gen\ASTFalseNode.h" />

@@ -139,6 +139,9 @@
     <ClCompile Include="..\VST\rts\Variable.cpp">
       <Filter>rts</Filter>
     </ClCompile>
+    <ClCompile Include="..\VST\gen\ASTCompilationUnit.cc">
+      <Filter>ast</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\VST\gen\ASTAddNode.h">
@@ -284,6 +287,9 @@
     </ClInclude>
     <ClInclude Include="..\VST\rts\Variable.h">
       <Filter>rts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\VST\gen\ASTCompilationUnit.h">
+      <Filter>ast</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

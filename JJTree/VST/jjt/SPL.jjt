@@ -76,7 +76,7 @@ TOKEN : /* LITERALS */
  */
 
 /** Compilation unit. */
-void CompilationUnit() :
+void CompilationUnit() #CompilationUnit:
 {
    string name;
 }

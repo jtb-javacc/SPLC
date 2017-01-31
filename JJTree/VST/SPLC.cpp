@@ -19,9 +19,10 @@ using namespace std;
 #include "SPLParserTokenManager.h"
 #include "ParseException.h"
 #include "DumpVisitor.h"
+#include "Interpret.h"
 
-JAVACC_STRING_TYPE ReadFileFully(char *file_name) {
-	return "(1 + 2) * (a + b);\n";
+JJString ReadFileFully(char *file_name) {
+	return "int n;\n n = 3 + 4;\n";
 }
 
 int main(int argc, char**argv) {
@@ -33,7 +34,8 @@ int main(int argc, char**argv) {
 		parser.CompilationUnit();
 		Node* n = parser.rootNode();
 		DumpVisitor dumpVisitor;
-		n->jjtAccept(&dumpVisitor, nullptr);
+		Interpret interpret;
+		n->jjtAccept(&interpret, nullptr);
 	} catch (const ParseException& e) {
 
 	}

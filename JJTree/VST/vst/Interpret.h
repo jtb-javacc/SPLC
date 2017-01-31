@@ -19,11 +19,13 @@ using std::map;
 #include "SPLParserVisitor.h"
 #include "JavaCC.h"
 
-class Interpret : public SPLParserDefaultVisitor {
+class Interpret : public SPLParserVisitor {
 public:
 	Interpret();
 	~Interpret();
 
+	void visit(const SimpleNode *node, void* data);
+	void visit(const ASTCompilationUnit *node, void* data);
 	void visit(const ASTVarDeclaration *node, void* data);
 	void visit(const ASTAssignment *node, void* data);
 	void visit(const ASTOrNode *node, void* data);
