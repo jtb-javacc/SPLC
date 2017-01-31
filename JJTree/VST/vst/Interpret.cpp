@@ -5,10 +5,10 @@
  *      Author: FrancisANDRE
  */
 
+#include <iostream>
 #include <memory>
 #include <stdexcept>
-using std::unique_ptr;
-using std::runtime_error;
+using namespace std;
 
 #include "Interpret.h"
 #include "Variable.h"
@@ -42,10 +42,10 @@ void Interpret::visit(const ASTAssignment *node, void* data) {
 	node->childrenAccept(this, data);
 	string name;
 
-	//    symtab.put(name = ((ASTId)jjtGetChild(0)).name, stack[top]);
-	Node* top = stack.top();stack.pop();
-	//name = ((ASTId*)jjtGetChild(0))->name;
-	symtab[name] = top;
+	Node* value = stack.top(); stack.pop();
+	Node* top = stack.top(); stack.pop();
+	name = ((ASTId*)top)->name;
+	symtab[name] = value;
 }
 void Interpret::visit(const ASTOrNode *node, void* data) {
 	node->children[0]->jjtAccept(this, data);
@@ -89,16 +89,12 @@ void Interpret::visit(const ASTBitwiseOrNode *node, void* data) {
 	node->childrenAccept(this, data);
 	const Node* top = stack.top();
 	if (typeid(*top) == typeid(Boolean)) {
-		unique_ptr<Boolean> left((Boolean*)stack.top());
-		stack.pop();
-		unique_ptr<Boolean> righ((Boolean*)stack.top());
-		stack.pop();
+		unique_ptr<Boolean> left((Boolean*)stack.top());stack.pop();
+		unique_ptr<Boolean> righ((Boolean*)stack.top());stack.pop();
 		stack.push(new Boolean(*left | *righ));
 	} else if (typeid(*top) == typeid(Integer)) {
-		unique_ptr<Integer> left((Integer*)stack.top());
-		stack.pop();
-		unique_ptr<Integer> righ((Integer*)stack.top());
-		stack.pop();
+		unique_ptr<Integer> left((Integer*)stack.top());stack.pop();
+		unique_ptr<Integer> righ((Integer*)stack.top());stack.pop();
 		stack.push(new Integer(*left | *righ));
 	} else
 		throw runtime_error("Invalid node on top of stack");
@@ -277,4 +273,8 @@ void Interpret::visit(const ASTReadStatement *node, void* data) {
 }
 void Interpret::visit(const ASTWriteStatement *node, void* data) {
 	node->childrenAccept(this, data);
+	while(!stack.empty()) {
+		const Node* top = stack.top(); stack.pop();
+		cout << top->getId() << endl;
+	}
 }

@@ -22,7 +22,7 @@ using namespace std;
 #include "Interpret.h"
 
 JJString ReadFileFully(char *file_name) {
-	return "int n;\n n = 3 + 4;\n";
+	return "int n;\n n = 3 + 4;\nwrite n;\n";
 }
 
 int main(int argc, char**argv) {
