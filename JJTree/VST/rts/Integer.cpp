@@ -44,3 +44,14 @@ bool Integer::operator>=(const Integer& value) const {
 bool Integer::operator>(const Integer& value) const {
 	return integer > value.integer;
 }
+ostream& operator<<(std::ostream& os, const Integer& obj) {
+	os << obj.integer;
+	return os;
+}
+istream& operator >> (std::istream& is, Integer& obj) {
+	is >> obj.integer;
+
+	if ( false/* T could not be constructed */)
+		is.setstate(std::ios::failbit);
+	return is;
+}

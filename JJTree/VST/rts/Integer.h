@@ -6,6 +6,9 @@
  */
 
 #pragma once
+#include <iostream>
+using std::istream;
+using std::ostream;
 
 #include "SimpleNode.h"
 
@@ -27,6 +30,9 @@ public:
 	bool operator>  (const Integer& value) const;
 
 	operator int() const { return integer; }
+
+	friend ostream& operator<<(ostream& os, const Integer& integer);
+	friend istream& operator>>(istream& is, Integer& integer);
 
 private:
 	int integer;

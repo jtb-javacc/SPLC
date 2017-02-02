@@ -20,6 +20,9 @@ Interpret::Interpret() {
 }
 
 Interpret::~Interpret() {
+	for(const auto& kv: symtab) {
+		delete kv.second;
+	}
 }
 
 void Interpret::visit(const SimpleNode *node, void* data) {
@@ -43,8 +46,8 @@ void Interpret::visit(const ASTAssignment *node, void* data) {
 	string name;
 
 	Node* value = stack.top(); stack.pop();
-	Node* top = stack.top(); stack.pop();
-	name = ((ASTId*)top)->name;
+	unique_ptr<Node>  top(stack.top()); stack.pop();
+	name = ((ASTId*)node->jjtGetChild(0))->name;
 	symtab[name] = value;
 }
 void Interpret::visit(const ASTOrNode *node, void* data) {
@@ -254,7 +257,8 @@ void Interpret::visit(const ASTNotNode *node, void* data) {
 }
 void Interpret::visit(const ASTId *node, void* data) {
 	node->childrenAccept(this, data);
-	stack.push(symtab[node->name]);
+	Node* value = symtab[node->name];
+	stack.push(value);
 }
 void Interpret::visit(const ASTIntConstNode *node, void* data) {
 	node->childrenAccept(this, data);
@@ -269,12 +273,18 @@ void Interpret::visit(const ASTFalseNode *node, void* data) {
 	stack.push(new Boolean(false));
 }
 void Interpret::visit(const ASTReadStatement *node, void* data) {
-	node->childrenAccept(this, data);
+	Integer* integer = new Integer();
+	cin >> *integer;
+	unique_ptr<Node> value(symtab[node->name]);
+	symtab[node->name] = integer;
 }
 void Interpret::visit(const ASTWriteStatement *node, void* data) {
-	node->childrenAccept(this, data);
-	while(!stack.empty()) {
-		const Node* top = stack.top(); stack.pop();
-		cout << top->getId() << endl;
+	const Node* value = symtab[node->name];
+	if (value == nullptr)
+		return;
+
+	if (typeid(*value) == typeid(Integer)) {
+		const Integer& integer = *static_cast<const Integer*>(value);
+		cout << integer << endl;
 	}
 }

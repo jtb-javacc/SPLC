@@ -5,7 +5,12 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SPLCA", "SPLCA.vcxproj", "{33AFF11E-ECE1-4CE2-8794-E470286BB496}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{604687AA-4A6C-45A9-9780-8469E280B792}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "spl", "spl", "{604687AA-4A6C-45A9-9780-8469E280B792}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\spl\fact.spl = ..\..\spl\fact.spl
+		..\..\spl\odd.spl = ..\..\spl\odd.spl
+		..\..\spl\sqrt.spl = ..\..\spl\sqrt.spl
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SPLCV", "SPLCV.vcxproj", "{F4C1863F-BEE0-4F15-9C66-37BF07E1DC05}"
 EndProject

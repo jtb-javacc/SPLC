@@ -1,11 +1,3 @@
-//============================================================================
-// Name        : SPLC.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
 #include <iostream>
 using namespace std;
 #include <fstream>
@@ -22,7 +14,7 @@ using namespace std;
 #include "Interpret.h"
 
 JJString ReadFileFully(char *file_name) {
-	return "int n;\n n = 3 + 4;\nwrite n;\n";
+	return "int n;\n n = 3 + 4 * 5 + 6;\nwrite n;\n";
 }
 
 int main(int argc, char**argv) {
@@ -37,7 +29,7 @@ int main(int argc, char**argv) {
 		Interpret interpret;
 		n->jjtAccept(&interpret, nullptr);
 	} catch (const ParseException& e) {
-
+		clog << e.expectedTokenSequences << endl;
 	}
 return 0;
 }
