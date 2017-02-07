@@ -51,6 +51,7 @@
 						srcDir new File(projectDir, 'vst')
 					}
 					lib sources.generated
+					lib sources.runtime
 				}
 				cpp {
 					source {

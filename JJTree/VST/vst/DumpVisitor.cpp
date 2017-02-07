@@ -18,10 +18,10 @@ DumpVisitor::~DumpVisitor() {
 
 void DumpVisitor::defaultVisit(const SimpleNode *node, void* data) {
 	clog << node->toString() << endl;
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 }
  void DumpVisitor::visit(const ASTIntConstNode *node, void* data) {
-	 node->childrenAccept(this, data);
+	 node->jjtChildrenAccept(this, data);
  }
  JJSimpleString DumpVisitor::indentString() const {
 	return "    ";

@@ -26,13 +26,13 @@ Interpret::~Interpret() {
 }
 
 void Interpret::visit(const SimpleNode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 }
 void Interpret::visit(const ASTCompilationUnit *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 }
 void Interpret::visit(const ASTVarDeclaration *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	{
 		if (node->type == BOOL)
 			symtab[node->name] = new Boolean(false);
@@ -42,7 +42,7 @@ void Interpret::visit(const ASTVarDeclaration *node, void* data) {
 
 }
 void Interpret::visit(const ASTAssignment *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	string name;
 
 	Node* value = stack.top(); stack.pop();
@@ -51,7 +51,7 @@ void Interpret::visit(const ASTAssignment *node, void* data) {
 	symtab[name] = value;
 }
 void Interpret::visit(const ASTOrNode *node, void* data) {
-	node->children[0]->jjtAccept(this, data);
+	node->jjtChildAccept(0, this, data);
 	const Node* top = stack.top();
 	if (typeid(*top) == typeid(Boolean)) {
 		const Boolean* boolean = (Boolean*)top;
@@ -61,13 +61,13 @@ void Interpret::visit(const ASTOrNode *node, void* data) {
 		}
 	}
 
-	node->children[1]->jjtAccept(this, data);
+	node->jjtChildAccept(1, this, data);
 	unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
 	unique_ptr<Boolean> right((Boolean*)stack.top()); stack.pop();
 	stack.push(*left || *right);
 }
 void Interpret::visit(const ASTAndNode *node, void* data) {
-	node->children[0]->jjtAccept(this, data);
+	node->jjtChildAccept(0, this, data);
 	const Node* top = stack.top();
 
 	if (typeid(*top) == typeid(Boolean)) {
@@ -77,19 +77,19 @@ void Interpret::visit(const ASTAndNode *node, void* data) {
 			return;
 		}
 	}
-	node->children[1]->jjtAccept(this, data);
+	node->jjtChildAccept(1, this, data);
 
 	unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
 	unique_ptr<Boolean> right((Boolean*)stack.top()); stack.pop();
 	stack.push(new Boolean(*left || *right));
 }
 void Interpret::visit(const ASTBitwiseComplNode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	unique_ptr<Integer> top((Integer*)stack.top()); stack.pop();
 	stack.push(new Integer(~(*top)));
 }
 void Interpret::visit(const ASTBitwiseOrNode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	const Node* top = stack.top();
 	if (typeid(*top) == typeid(Boolean)) {
 		unique_ptr<Boolean> left((Boolean*)stack.top());stack.pop();
@@ -103,7 +103,7 @@ void Interpret::visit(const ASTBitwiseOrNode *node, void* data) {
 		throw runtime_error("Invalid node on top of stack");
 }
 void Interpret::visit(const ASTBitwiseXorNode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	const Node* top = stack.top();
 	if (typeid(*top) == typeid(Boolean)) {
 		unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
@@ -117,7 +117,7 @@ void Interpret::visit(const ASTBitwiseXorNode *node, void* data) {
 		throw runtime_error("Invalid node on top of stack");
 }
 void Interpret::visit(const ASTBitwiseAndNode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	const Node* top = stack.top();
 	if (typeid(*top) == typeid(Boolean)) {
 		unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
@@ -131,7 +131,7 @@ void Interpret::visit(const ASTBitwiseAndNode *node, void* data) {
 		throw runtime_error("Invalid node on top of stack");
 }
 void Interpret::visit(const ASTEQNode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	const Node* top = stack.top();
 	if (typeid(*top) == typeid(Boolean)) {
 		unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
@@ -146,7 +146,7 @@ void Interpret::visit(const ASTEQNode *node, void* data) {
 		throw runtime_error("Invalid node on top of stack");
 }
 void Interpret::visit(const ASTNENode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	const Node* top = stack.top();
 	if (typeid(*top) == typeid(Boolean)) {
 		unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
@@ -161,7 +161,7 @@ void Interpret::visit(const ASTNENode *node, void* data) {
 		throw runtime_error("Invalid node on top of stack");
 }
 void Interpret::visit(const ASTLTNode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	const Node* top = stack.top();
 	if (typeid(*top) == typeid(Boolean)) {
 		unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
@@ -176,7 +176,7 @@ void Interpret::visit(const ASTLTNode *node, void* data) {
 		throw runtime_error("Invalid node on top of stack");
 }
 void Interpret::visit(const ASTGTNode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	const Node* top = stack.top();
 	if (typeid(*top) == typeid(Boolean)) {
 		unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
@@ -191,7 +191,7 @@ void Interpret::visit(const ASTGTNode *node, void* data) {
 		throw runtime_error("Invalid node on top of stack");
 }
 void Interpret::visit(const ASTLENode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	const Node* top = stack.top();
 	if (typeid(*top) == typeid(Boolean)) {
 		unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
@@ -206,7 +206,7 @@ void Interpret::visit(const ASTLENode *node, void* data) {
 		throw runtime_error("Invalid node on top of stack");
 }
 void Interpret::visit(const ASTGENode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	const Node* top = stack.top();
 	if (typeid(*top) == typeid(Boolean)) {
 		unique_ptr<Boolean> left((Boolean*)stack.top()); stack.pop();
@@ -221,55 +221,55 @@ void Interpret::visit(const ASTGENode *node, void* data) {
 		throw runtime_error("Invalid node on top of stack");
 }
 void Interpret::visit(const ASTAddNode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
 	unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
 	stack.push(*left + *right);
 }
 void Interpret::visit(const ASTSubtractNode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
 	unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
 	stack.push(*left - *right);
 }
 void Interpret::visit(const ASTMulNode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
 	unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
 	stack.push(*left * *right);
 }
 void Interpret::visit(const ASTDivNode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
 	unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
 	stack.push(*left / *right);
 }
 void Interpret::visit(const ASTModNode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	unique_ptr<Integer> left((Integer*)stack.top()); stack.pop();
 	unique_ptr<Integer> right((Integer*)stack.top()); stack.pop();
 	stack.push(*left % *right);
 }
 void Interpret::visit(const ASTNotNode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	unique_ptr<Boolean> top((Boolean*)stack.top()); stack.pop();
 	stack.push(new Boolean(!*top));
 }
 void Interpret::visit(const ASTId *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	Node* value = symtab[node->name];
 	stack.push(value);
 }
 void Interpret::visit(const ASTIntConstNode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	stack.push(new Integer(node->val));
 }
 void Interpret::visit(const ASTTrueNode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	stack.push(new Boolean(true));
 }
 void Interpret::visit(const ASTFalseNode *node, void* data) {
-	node->childrenAccept(this, data);
+	node->jjtChildrenAccept(this, data);
 	stack.push(new Boolean(false));
 }
 void Interpret::visit(const ASTReadStatement *node, void* data) {
