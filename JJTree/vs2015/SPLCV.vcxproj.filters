@@ -142,12 +142,6 @@
     <ClCompile Include="..\VST\gen\ASTCompilationUnit.cc">
       <Filter>ast</Filter>
     </ClCompile>
-    <ClCompile Include="..\VST\rts\Readable.cpp">
-      <Filter>rts</Filter>
-    </ClCompile>
-    <ClCompile Include="..\VST\rts\Writable.cpp">
-      <Filter>rts</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\VST\gen\ASTAddNode.h">
@@ -299,12 +293,6 @@
     </ClInclude>
     <ClInclude Include="..\VST\jjt\Node.h">
       <Filter>jjt</Filter>
-    </ClInclude>
-    <ClInclude Include="..\VST\rts\Writable.h">
-      <Filter>rts</Filter>
-    </ClInclude>
-    <ClInclude Include="..\VST\rts\Readable.h">
-      <Filter>rts</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

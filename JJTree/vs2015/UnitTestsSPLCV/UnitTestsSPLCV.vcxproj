@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -18,137 +18,36 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\AST\gen\CharStream.cc" />
-    <ClCompile Include="..\AST\gen\JJTSPLParserState.cc" />
-    <ClCompile Include="..\AST\gen\ParseException.cc" />
-    <ClCompile Include="..\AST\gen\SimpleNode.cc" />
-    <ClCompile Include="..\AST\gen\SPLParser.cc" />
-    <ClCompile Include="..\AST\gen\SPLParserTokenManager.cc" />
-    <ClCompile Include="..\AST\gen\Token.cc" />
-    <ClCompile Include="..\AST\gen\TokenMgrError.cc" />
-    <ClCompile Include="..\AST\jjt\ASTAddNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTAndNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTAssignment.cc" />
-    <ClCompile Include="..\AST\jjt\ASTBitwiseAndNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTBitwiseComplNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTBitwiseOrNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTBitwiseXorNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTBlock.cc" />
-    <ClCompile Include="..\AST\jjt\ASTCompilationUnit.cc" />
-    <ClCompile Include="..\AST\jjt\ASTDivNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTEQNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTFalseNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTGENode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTGTNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTId.cc" />
-    <ClCompile Include="..\AST\jjt\ASTIfStatement.cc" />
-    <ClCompile Include="..\AST\jjt\ASTIntConstNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTLENode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTLTNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTModNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTMulNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTNENode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTNotNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTOrNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTReadStatement.cc" />
-    <ClCompile Include="..\AST\jjt\ASTStatementExpression.cc" />
-    <ClCompile Include="..\AST\jjt\ASTSubtractNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTTrueNode.cc" />
-    <ClCompile Include="..\AST\jjt\ASTVarDeclaration.cc" />
-    <ClCompile Include="..\AST\jjt\ASTWhileStatement.cc" />
-    <ClCompile Include="..\AST\jjt\ASTWriteStatement.cc" />
-    <ClCompile Include="..\AST\jjt\MyNode.cc" />
-    <ClCompile Include="..\AST\rts\Boolean.cpp" />
-    <ClCompile Include="..\AST\rts\Integer.cpp" />
-    <ClCompile Include="..\AST\rts\Variable.cpp" />
-    <ClCompile Include="..\AST\SPLC.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\AST\gen\CharStream.h" />
-    <ClInclude Include="..\AST\gen\ErrorHandler.h" />
-    <ClInclude Include="..\AST\gen\JavaCC.h" />
-    <ClInclude Include="..\AST\gen\JJTSPLParserState.h" />
-    <ClInclude Include="..\AST\gen\ParseException.h" />
-    <ClInclude Include="..\AST\gen\SimpleNode.h" />
-    <ClInclude Include="..\AST\gen\SPLParser.h" />
-    <ClInclude Include="..\AST\gen\SPLParserConstants.h" />
-    <ClInclude Include="..\AST\gen\SPLParserTokenManager.h" />
-    <ClInclude Include="..\AST\gen\SPLParserTree.h" />
-    <ClInclude Include="..\AST\gen\SPLParserTreeConstants.h" />
-    <ClInclude Include="..\AST\gen\Token.h" />
-    <ClInclude Include="..\AST\gen\TokenManager.h" />
-    <ClInclude Include="..\AST\gen\TokenMgrError.h" />
-    <ClInclude Include="..\AST\jjt\ASTAddNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTAndNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTAssignment.h" />
-    <ClInclude Include="..\AST\jjt\ASTBitwiseAndNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTBitwiseComplNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTBitwiseOrNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTBitwiseXorNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTBlock.h" />
-    <ClInclude Include="..\AST\jjt\ASTCompilationUnit.h" />
-    <ClInclude Include="..\AST\jjt\ASTDivNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTEQNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTFalseNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTGENode.h" />
-    <ClInclude Include="..\AST\jjt\ASTGTNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTId.h" />
-    <ClInclude Include="..\AST\jjt\ASTIfStatement.h" />
-    <ClInclude Include="..\AST\jjt\ASTIntConstNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTLENode.h" />
-    <ClInclude Include="..\AST\jjt\ASTLTNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTModNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTMulNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTNENode.h" />
-    <ClInclude Include="..\AST\jjt\ASTNotNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTOrNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTReadStatement.h" />
-    <ClInclude Include="..\AST\jjt\ASTStatementExpression.h" />
-    <ClInclude Include="..\AST\jjt\ASTSubtractNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTTrueNode.h" />
-    <ClInclude Include="..\AST\jjt\ASTVarDeclaration.h" />
-    <ClInclude Include="..\AST\jjt\ASTWhileStatement.h" />
-    <ClInclude Include="..\AST\jjt\ASTWriteStatement.h" />
-    <ClInclude Include="..\AST\jjt\MyNode.h" />
-    <ClInclude Include="..\AST\jjt\Node.h" />
-    <ClInclude Include="..\AST\rts\Boolean.h" />
-    <ClInclude Include="..\AST\rts\Integer.h" />
-    <ClInclude Include="..\AST\rts\Variable.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\AST\jjt\SPL.jjt" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{33AFF11E-ECE1-4CE2-8794-E470286BB496}</ProjectGuid>
+    <ProjectGuid>{C6534306-FA32-46C7-9F71-A5F69C2C5FF1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SPLCA</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <RootNamespace>UnitTestsSPLCV</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -175,18 +74,12 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>../AST/vst;../AST/rts;../AST/jjt;../AST/gen;$(IncludePath)</IncludePath>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
-    <IntDir>$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>../AST/vst;../AST/rts;../AST/jjt;../AST/gen;$(IncludePath)</IncludePath>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
-    <IntDir>$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -195,7 +88,6 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -209,7 +101,6 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalOptions>/FS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -225,7 +116,6 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -243,7 +133,6 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalOptions>/FS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -252,6 +141,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

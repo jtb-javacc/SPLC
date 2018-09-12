@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -57,9 +57,7 @@
     <ClCompile Include="..\VST\rts\Boolean.cpp" />
     <ClCompile Include="..\VST\rts\Integer.cpp" />
     <ClCompile Include="..\VST\rts\Object.cpp" />
-    <ClCompile Include="..\VST\rts\Readable.cpp" />
     <ClCompile Include="..\VST\rts\Variable.cpp" />
-    <ClCompile Include="..\VST\rts\Writable.cpp" />
     <ClCompile Include="..\VST\SPLC.cpp" />
     <ClCompile Include="..\VST\vst\DumpVisitor.cpp" />
     <ClCompile Include="..\VST\vst\Interpret.cpp" />
@@ -112,9 +110,7 @@
     <ClInclude Include="..\VST\rts\Boolean.h" />
     <ClInclude Include="..\VST\rts\Integer.h" />
     <ClInclude Include="..\VST\rts\Object.h" />
-    <ClInclude Include="..\VST\rts\Readable.h" />
     <ClInclude Include="..\VST\rts\Variable.h" />
-    <ClInclude Include="..\VST\rts\Writable.h" />
     <ClInclude Include="..\VST\vst\DumpVisitor.h" />
     <ClInclude Include="..\VST\vst\Interpret.h" />
   </ItemGroup>
@@ -126,32 +122,32 @@
     <ProjectGuid>{F4C1863F-BEE0-4F15-9C66-37BF07E1DC05}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>SPLCV</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
