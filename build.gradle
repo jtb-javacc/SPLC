@@ -22,6 +22,7 @@ subprojects {
 		
 	    dependencies {
 			javacc 'net.java.dev.javacc:javacc:7.0.2'
+//			javacc 'net.java.dev.javacc:javacc:8.0.0'
 	    }
 	}
 	
