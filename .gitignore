@@ -37,3 +37,71 @@ Debug/
 *.out
 *.app
 /Debug/
+
+# Logs and databases #
+######################
+*.log*
+*.sqlite
+*.db
+test*.txt
+XML/testsuite/rss.xml
+Zip/testsuite/test.dat
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+*~
+
+# VS generated files #
+######################
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.ipch
+*.ncb
+*.suo
+*.sdf
+*.opensdf
+*.opendb
+*.tlb
+*.tlh
+*.ilk
+*.lib
+*.exp
+*.idb
+*.rc
+*.res
+*.manifest
+*.tlog
+*.lastbuildstate
+*.unsuccessfulbuild
+.vs/
+
+# Eclipse generated files #
+######################
+.classpath
+.project
+.cproject
+.settings
+cmake-build/
+
+
+# Clion generated files #
+######################
+cmake-build-*
+.idea/
+
+# Temporary files #
+###################
+*.bak
+
