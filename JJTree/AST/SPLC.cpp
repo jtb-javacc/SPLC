@@ -7,13 +7,13 @@
 //============================================================================
 
 #include <iostream>
-using namespace std;
 #include <fstream>
 #include <iomanip>
 #include <iostream>
 #include <string>
 #include <stdlib.h>
 #include "SPLParser.h"
+using namespace std;
 
 #include "JavaCC.h"
 #include "SPLParserTokenManager.h"

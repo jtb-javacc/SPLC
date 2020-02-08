@@ -31,10 +31,11 @@ options {
 	NODE_DEFAULT_VOID=true;
 	VISITOR_DATA_TYPE="void*";
 	VISITOR_RETURN_TYPE="void";
-    MULTI=true;
+    	MULTI=true;
 //    NODE_EXTENDS="MyNode";
-    TRACK_TOKENS=true;
-    OUTPUT_LANGUAGE="c++";
+    	TRACK_TOKENS=true;
+    	OUTPUT_LANGUAGE="c++";
+    	DEBUG_PARSER=true;
 }
 
 PARSER_BEGIN(SPLParser)
